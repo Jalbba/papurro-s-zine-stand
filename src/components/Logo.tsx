@@ -1,10 +1,10 @@
+import logoAsset from "@/assets/papurro-logo.png.asset.json";
+
 /**
  * SINGLE SWAP POINT for the real logo artwork.
- * When the client's PNG lands (public/papurro-logo.png or a public URL),
- * set LOGO_SRC to that path/URL — navbar, hero and footer all update.
- * While it is null, a gradient-bordered wordmark placeholder is shown.
+ * Points at the client's PNG on the CDN; navbar, hero and footer all use it.
  */
-export const LOGO_SRC: string | null = null; // e.g. "/papurro-logo.png"
+export const LOGO_SRC: string | null = logoAsset.url;
 
 type LogoProps = {
   className?: string;
