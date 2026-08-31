@@ -154,7 +154,7 @@ function Index() {
 
             <p className="mt-8 max-w-xl text-lg font-medium sm:text-xl">
               Automatización, IA que sirve y atención al cliente ordenada. No soy una
-              agencia: soy una persona, con una computadora y mucho café.
+              agencia: soy una persona con una computadora.
             </p>
 
             <div className="mt-8">
@@ -164,8 +164,8 @@ function Index() {
               >
                 contame tu quilombo →
               </a>
-              <p className="mt-3 text-sm font-bold">Respondo yo. En serio. No hay bot.</p>
             </div>
+
 
             <div className="relative mx-auto mt-14 w-[16rem] sm:w-[20rem]">
               <div className="sticker sticker-hover rotate-[-4deg] bg-paper p-4">
@@ -218,8 +218,9 @@ function Index() {
               </p>
               <p className="mt-4 text-base font-medium sm:text-lg">
                 Es <span className="marker">una persona</span>. Una sola. Con una
-                computadora, buen café y una paciencia rara para los detalles.
+                computadora y una paciencia rara para los detalles.
               </p>
+
               <p className="mt-4 text-base font-medium sm:text-lg">
                 Trabajo con pocas tiendas a la vez, porque prefiero hacer bien tres cosas
                 que hacer mal treinta.
@@ -341,7 +342,7 @@ function Index() {
       {/* 8. Footer */}
       <footer className="bg-ink px-4 py-10 text-paper">
         <div className="mx-auto flex max-w-5xl flex-col items-start gap-4 sm:flex-row sm:items-center">
-          <Mascot className="h-14 w-14 shrink-0" title="Papurro, el perro-papa (mini)" />
+          <Mascot className="h-14 w-14 shrink-0" title="Papurro, la papa con antenas (mini)" />
           <p className="text-sm font-medium">
             <span className="font-display text-lg">papurro</span> · Shopify,
             automatización e IA para tiendas uruguayas ·{" "}
