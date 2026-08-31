@@ -1,14 +1,14 @@
-import { useEffect, useRef, useState } from "react";
-
 /**
- * Single swap point for the real logo artwork.
- * Drop the client's PNG at public/papurro-logo.png and everything updates.
+ * SINGLE SWAP POINT for the real logo artwork.
+ * When the client's PNG lands (public/papurro-logo.png or a public URL),
+ * set LOGO_SRC to that path/URL — navbar, hero and footer all update.
+ * While it is null, a gradient-bordered wordmark placeholder is shown.
  */
-export const LOGO_SRC = "/papurro-logo.png";
+export const LOGO_SRC: string | null = null; // e.g. "/papurro-logo.png"
 
 type LogoProps = {
   className?: string;
-  /** Fallback wordmark size while the real PNG isn't in place. */
+  /** Text size for the placeholder wordmark. */
   placeholderClassName?: string;
 };
 
@@ -21,39 +21,14 @@ export function Wordmark({ className }: { className?: string }) {
   );
 }
 
-/**
- * Renders the logo image; if the asset isn't uploaded yet it degrades to a
- * gradient-bordered placeholder with the gradient wordmark so nothing breaks.
- */
 export function Logo({ className, placeholderClassName }: LogoProps) {
-  const [failed, setFailed] = useState(false);
-  const ref = useRef<HTMLImageElement>(null);
-
-  // Catch errors that happened before hydration attached the handler.
-  useEffect(() => {
-    const img = ref.current;
-    if (img && img.complete && img.naturalWidth === 0) setFailed(true);
-  }, []);
-
-  if (failed) {
-    return (
-      <span
-        className={`grad-border inline-flex items-center justify-center bg-paper px-4 py-3 ${className ?? ""}`}
-      >
-        <Wordmark className={placeholderClassName ?? "text-2xl"} />
-      </span>
-    );
+  if (LOGO_SRC) {
+    return <img src={LOGO_SRC} alt="Papurro" className={className} decoding="async" />;
   }
 
   return (
-    <img
-      ref={ref}
-      src={LOGO_SRC}
-      alt="Papurro"
-      className={className}
-      onError={() => setFailed(true)}
-      loading="eager"
-      decoding="async"
-    />
+    <span className="grad-border inline-flex items-center justify-center bg-paper px-4 py-3">
+      <Wordmark className={placeholderClassName ?? "text-2xl"} />
+    </span>
   );
 }
