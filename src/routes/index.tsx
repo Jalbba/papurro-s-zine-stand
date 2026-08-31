@@ -218,8 +218,9 @@ function Index() {
               </p>
               <p className="mt-4 text-base font-medium sm:text-lg">
                 Es <span className="marker">una persona</span>. Una sola. Con una
-                computadora, buen café y una paciencia rara para los detalles.
+                computadora y una paciencia rara para los detalles.
               </p>
+
               <p className="mt-4 text-base font-medium sm:text-lg">
                 Trabajo con pocas tiendas a la vez, porque prefiero hacer bien tres cosas
                 que hacer mal treinta.
