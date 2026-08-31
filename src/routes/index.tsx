@@ -146,10 +146,11 @@ function Index() {
 
             <h1
               id="hero-title"
-              className="mt-6 text-[3.25rem] leading-[0.92] sm:text-7xl md:text-8xl"
+              className="mt-6 text-[3.25rem] leading-[1.18] sm:text-7xl md:text-8xl"
             >
               hago que tu shopify <span className="marker">labure solo</span>.
             </h1>
+
 
             <p className="mt-8 max-w-xl text-lg font-medium sm:text-xl">
               Automatización, IA que sirve y atención al cliente ordenada. No soy una
