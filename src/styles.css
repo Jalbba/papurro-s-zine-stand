@@ -205,10 +205,12 @@
 @utility marker {
   background-image: var(--rainbow-x);
   color: var(--ink);
-  border-radius: 6px;
-  padding: 0 0.18em;
-  box-shadow: 0 0 0 3px var(--ink);
+  border-radius: 8px;
+  padding: 0 0.14em 0.06em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
+
 
 /* ---------- Wordmark ---------- */
 
