@@ -237,7 +237,7 @@
   z-index: -1;
   color: var(--ink);
   -webkit-text-fill-color: var(--ink);
-  -webkit-text-stroke: 0.16em var(--ink);
+  -webkit-text-stroke: 0.11em var(--ink);
   paint-order: stroke fill;
 }
 
