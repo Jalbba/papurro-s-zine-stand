@@ -342,7 +342,7 @@ function Index() {
       {/* 8. Footer */}
       <footer className="bg-ink px-4 py-10 text-paper">
         <div className="mx-auto flex max-w-5xl flex-col items-start gap-4 sm:flex-row sm:items-center">
-          <Mascot className="h-14 w-14 shrink-0" title="Papurro, el perro-papa (mini)" />
+          <Mascot className="h-14 w-14 shrink-0" title="Papurro, la papa con antenas (mini)" />
           <p className="text-sm font-medium">
             <span className="font-display text-lg">papurro</span> · Shopify,
             automatización e IA para tiendas uruguayas ·{" "}
