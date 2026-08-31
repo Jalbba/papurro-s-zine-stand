@@ -5,29 +5,34 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Papurro design system: riso print / zine / sticker-book.
- * Flat colors only, hard offset shadows, no blur, no gradients.
+ * Papurro design system: rainbow-gradient sticker/cartoon.
+ * Gradient stops sampled from the client logo. Body copy always on solid
+ * white panels in --ink; gradients carry buttons, wordmark, bars and badges.
  */
 
 @theme inline {
   --color-paper: var(--paper);
   --color-ink: var(--ink);
-  --color-pink: var(--pink);
-  --color-yellow: var(--yellow);
-  --color-cyan: var(--cyan);
-  --color-lime: var(--lime);
-  --color-orange: var(--orange);
+
+  --color-teal: var(--grad-teal);
+  --color-lime: var(--grad-lime);
+  --color-yellow: var(--grad-yellow);
+  --color-orange: var(--grad-orange);
+  --color-pink: var(--grad-pink);
+  --color-purple: var(--grad-purple);
+  /* legacy alias so older markup keeps working */
+  --color-cyan: var(--grad-teal);
 
   --color-background: var(--paper);
   --color-foreground: var(--ink);
   --color-border: var(--ink);
-  --color-primary: var(--pink);
-  --color-primary-foreground: var(--ink);
+  --color-primary: var(--grad-pink);
+  --color-primary-foreground: var(--paper);
   --color-muted-foreground: var(--ink);
   --color-ring: var(--ink);
 
-  --font-display: "Archivo Black", "Arial Black", sans-serif;
-  --font-sans: "Space Grotesk", ui-sans-serif, sans-serif;
+  --font-display: "Baloo 2", "Archivo Black", system-ui, sans-serif;
+  --font-sans: "Nunito", ui-sans-serif, sans-serif;
 
   --shadow-hard: 6px 6px 0 var(--ink);
   --shadow-hard-sm: 4px 4px 0 var(--ink);
@@ -35,14 +40,37 @@
 }
 
 :root {
-  --paper: #fff6e5;
-  --ink: #141110;
-  --pink: #ff4e88;
-  --yellow: #ffd029;
-  --cyan: #37d5d6;
-  --lime: #b6e549;
-  --orange: #ff7a2f;
-  --radius: 0px;
+  --paper: #ffffff;
+  --off-paper: #fbfaff;
+  --ink: #0a1128;
+
+  --grad-teal: #01c8d1;
+  --grad-lime: #9eca2f;
+  --grad-yellow: #ffd008;
+  --grad-orange: #ff930e;
+  --grad-pink: #fe3d7c;
+  --grad-purple: #9953d9;
+
+  --rainbow: linear-gradient(
+    135deg,
+    var(--grad-teal),
+    var(--grad-lime),
+    var(--grad-yellow),
+    var(--grad-orange),
+    var(--grad-pink),
+    var(--grad-purple)
+  );
+  --rainbow-x: linear-gradient(
+    90deg,
+    var(--grad-teal),
+    var(--grad-lime),
+    var(--grad-yellow),
+    var(--grad-orange),
+    var(--grad-pink),
+    var(--grad-purple)
+  );
+
+  --radius: 14px;
 }
 
 @layer base {
@@ -52,31 +80,18 @@
 
   html {
     scroll-behavior: smooth;
-    background-color: var(--paper);
+    background-color: var(--off-paper);
   }
 
   body {
-    background-color: var(--paper);
+    background-color: var(--off-paper);
     color: var(--ink);
     font-family: var(--font-sans);
     -webkit-tap-highlight-color: transparent;
   }
 
-  /* paper grain + halftone dots, very low opacity, over everything */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 50;
-    pointer-events: none;
-    opacity: 0.16;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E"),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Ccircle cx='1' cy='1' r='0.7' fill='%23141110'/%3E%3C/svg%3E");
-    background-size: 180px 180px, 6px 6px;
-  }
-
   ::selection {
-    background: var(--pink);
+    background: var(--grad-yellow);
     color: var(--ink);
   }
 
@@ -84,41 +99,78 @@
   h2,
   h3 {
     font-family: var(--font-display);
-    letter-spacing: -0.03em;
-    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
     text-transform: lowercase;
   }
 }
 
-/* ---------- Sticker primitives ---------- */
+/* ---------- Gradient primitives ---------- */
 
-@utility sticker {
+@utility rainbow-bg {
+  background-image: var(--rainbow);
+}
+
+@utility rainbow-bar {
+  background-image: var(--rainbow-x);
+}
+
+/* Gradient text fill (headings, accents) */
+@utility grad-text {
+  background-image: var(--rainbow-x);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gradient border via padding trick */
+@utility grad-border {
+  border: 3px solid transparent;
+  border-radius: var(--radius);
+  background:
+    linear-gradient(var(--paper), var(--paper)) padding-box,
+    var(--rainbow) border-box;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+/* ---------- Cards & buttons ---------- */
+
+@utility card {
   border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  background: var(--paper);
   box-shadow: 6px 6px 0 var(--ink);
   transition:
     transform 0.15s ease-out,
     box-shadow 0.15s ease-out;
 }
 
-@utility sticker-hover {
+@utility card-hover {
   &:hover {
-    transform: rotate(0deg) translate(-1px, -1px);
-    box-shadow: 8px 8px 0 var(--ink);
+    transform: translate(-2px, -2px);
+    box-shadow: 10px 10px 0 var(--ink);
   }
 }
 
 @utility btn-press {
+  display: inline-block;
   border: 3px solid var(--ink);
-  box-shadow: 6px 6px 0 var(--ink);
+  border-radius: 999px;
+  box-shadow: 5px 5px 0 var(--ink);
   font-family: var(--font-display);
+  font-weight: 800;
   text-transform: lowercase;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   transition:
     transform 0.08s ease-out,
-    box-shadow 0.08s ease-out;
+    box-shadow 0.08s ease-out,
+    filter 0.15s ease-out;
 
   &:hover {
     box-shadow: 8px 8px 0 var(--ink);
+    filter: saturate(1.15) brightness(1.03);
   }
 
   &:active {
@@ -127,19 +179,73 @@
   }
 }
 
-@utility marker {
-  background: var(--pink);
-  box-shadow:
-    0.35em 0 0 var(--pink),
-    -0.25em 0 0 var(--pink);
-  border-radius: 2px;
+/* Primary CTA: rainbow fill, ink text */
+@utility btn-rainbow {
+  background-image: var(--rainbow-x);
+  color: var(--ink);
 }
 
-/* ---------- Mascot animation ---------- */
+@utility btn-ink {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* Small gradient badge/pill */
+@utility pill {
+  display: inline-block;
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  background-image: var(--rainbow-x);
+  color: var(--ink);
+  font-weight: 800;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+/* Highlighted inline words */
+@utility marker {
+  background-image: var(--rainbow-x);
+  color: var(--ink);
+  border-radius: 8px;
+  padding: 0 0.14em 0.06em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+
+/* ---------- Wordmark ---------- */
+
+.wordmark {
+  position: relative;
+  isolation: isolate;
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: lowercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  background-image: var(--rainbow-x);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.wordmark::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  color: var(--ink);
+  -webkit-text-fill-color: var(--ink);
+  -webkit-text-stroke: 0.11em var(--ink);
+  paint-order: stroke fill;
+}
+
+/* ---------- Mascot / logo motion ---------- */
 
 @utility mascot-idle {
-  animation: papurro-wiggle 2s ease-in-out infinite;
-  transform-origin: 50% 80%;
+  animation: papurro-wiggle 3s ease-in-out infinite;
+  transform-origin: 50% 85%;
 
   & .mascot-lid {
     animation: papurro-blink 5s steps(1, end) infinite;
