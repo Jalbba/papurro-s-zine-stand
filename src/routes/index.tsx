@@ -154,7 +154,7 @@ function Index() {
 
             <p className="mt-8 max-w-xl text-lg font-medium sm:text-xl">
               Automatización, IA que sirve y atención al cliente ordenada. No soy una
-              agencia: soy una persona, con una computadora y mucho café.
+              agencia: soy una persona con una computadora.
             </p>
 
             <div className="mt-8">
@@ -164,8 +164,8 @@ function Index() {
               >
                 contame tu quilombo →
               </a>
-              <p className="mt-3 text-sm font-bold">Respondo yo. En serio. No hay bot.</p>
             </div>
+
 
             <div className="relative mx-auto mt-14 w-[16rem] sm:w-[20rem]">
               <div className="sticker sticker-hover rotate-[-4deg] bg-paper p-4">
