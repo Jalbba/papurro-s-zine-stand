@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /**
  * Single swap point for the real logo artwork.
@@ -27,11 +27,18 @@ export function Wordmark({ className }: { className?: string }) {
  */
 export function Logo({ className, placeholderClassName }: LogoProps) {
   const [failed, setFailed] = useState(false);
+  const ref = useRef<HTMLImageElement>(null);
+
+  // Catch errors that happened before hydration attached the handler.
+  useEffect(() => {
+    const img = ref.current;
+    if (img && img.complete && img.naturalWidth === 0) setFailed(true);
+  }, []);
 
   if (failed) {
     return (
       <span
-        className={`grad-border inline-flex items-center justify-center bg-paper px-3 py-2 ${className ?? ""}`}
+        className={`grad-border inline-flex items-center justify-center bg-paper px-4 py-3 ${className ?? ""}`}
       >
         <Wordmark className={placeholderClassName ?? "text-2xl"} />
       </span>
@@ -40,6 +47,7 @@ export function Logo({ className, placeholderClassName }: LogoProps) {
 
   return (
     <img
+      ref={ref}
       src={LOGO_SRC}
       alt="Papurro"
       className={className}
