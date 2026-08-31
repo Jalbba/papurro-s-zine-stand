@@ -100,7 +100,7 @@ function Index() {
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3">
           <a href="#top" className="flex items-center gap-2" aria-label="papurro, inicio">
             {/* LOGO SLOT · navbar */}
-            <Logo className="h-10 w-auto" placeholderClassName="text-xl" />
+            <Logo className="h-14 w-auto" placeholderClassName="text-xl" />
           </a>
           <a href={MAILTO} className="btn-press btn-rainbow px-5 py-3 text-lg">
             escribime
@@ -123,7 +123,7 @@ function Index() {
             <div className="card mt-6 p-5 sm:p-8">
               <h1
                 id="hero-title"
-                className="text-[3rem] leading-[1.1] sm:text-6xl md:text-7xl"
+                className="text-[3rem] leading-[1.22] sm:text-6xl md:text-7xl"
               >
                 hago que tu shopify <span className="marker">labure solo</span>.
               </h1>
