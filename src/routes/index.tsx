@@ -145,12 +145,10 @@ function Index() {
               </a>
             </div>
 
-            <div className="mx-auto w-[15rem] sm:w-[19rem]">
-              <Logo
-                className="mascot-idle h-auto w-full drop-shadow-[0_24px_40px_rgba(10,17,40,0.22)]"
-                placeholderClassName="text-4xl sm:text-5xl"
-              />
+            <div className="mx-auto w-[15rem] sm:w-[21rem]">
+              <PMark className="mascot-idle h-auto w-full drop-shadow-[0_30px_45px_rgba(10,17,40,0.25)]" />
             </div>
+
           </div>
         </section>
 
