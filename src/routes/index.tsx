@@ -307,10 +307,10 @@ function Index() {
       {/* 8. Footer */}
       <footer className="mt-6 bg-ink px-4 py-10 text-paper sm:px-6">
         <div className="mx-auto flex max-w-6xl flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <Logo className="h-11 w-auto shrink-0" placeholderClassName="text-lg" />
+          <Logo className="h-9 w-auto shrink-0" placeholderClassName="text-2xl" />
           <p className="text-xs font-medium text-paper/70 sm:text-sm">
-            <Wordmark className="text-base" /> · Shopify, automatización e IA para tiendas
-            uruguayas ·{" "}
+            Shopify, automatización e IA para tiendas uruguayas ·{" "}
+
             <a href={MAILTO} className="underline underline-offset-4">
               info@papurro.com
             </a>{" "}
