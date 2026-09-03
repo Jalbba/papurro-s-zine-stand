@@ -27,8 +27,9 @@ export function Logo({ className, placeholderClassName }: LogoProps) {
   }
 
   return (
-    <span className="grad-border inline-flex items-center justify-center bg-paper px-4 py-3">
+    <span className="card inline-flex items-center justify-center px-4 py-3">
       <Wordmark className={placeholderClassName ?? "text-2xl"} />
     </span>
   );
+
 }

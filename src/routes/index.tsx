@@ -3,11 +3,12 @@ import { useState } from "react";
 import { Logo, Wordmark } from "@/components/Logo";
 import {
   DoodleChat,
+  DoodleClock,
   DoodleGear,
+  DoodleMail,
   DoodleSpark,
   DoodleSpeed,
   Squiggle,
-  Tape,
 } from "@/components/Doodles";
 
 const MAILTO = "mailto:info@papurro.com";
@@ -35,48 +36,56 @@ export const Route = createFileRoute("/")({
 
 const servicios = [
   {
-    titulo: "Automatización",
+    titulo: "automatización",
     Icon: DoodleGear,
+    tint: "color-mix(in oklab, var(--grad-teal) 14%, white)",
     texto:
       "Esas cosas que hacés a mano 40 veces por día. Que las haga una máquina y vos andá a tomar un mate.",
   },
   {
-    titulo: "IA aplicada",
+    titulo: "ideas que sirven",
     Icon: DoodleSpark,
+    tint: "color-mix(in oklab, var(--grad-pink) 12%, white)",
     texto:
-      "IA que resuelve cosas, no IA de folleto. Clasificar pedidos, redactar respuestas, resumir quilombos. Lo que te ahorre horas de verdad.",
+      "IA que resuelve cosas, no IA de folleto. Clasificar pedidos, redactar respuestas, resumir quilombos.",
   },
   {
-    titulo: "Atención al cliente",
+    titulo: "atención al cliente",
     Icon: DoodleChat,
+    tint: "color-mix(in oklab, var(--grad-yellow) 20%, white)",
     texto:
       "Tickets ordenados, respuestas rápidas, menos «che, dónde está mi pedido». Tu cliente contento y vos durmiendo.",
   },
   {
-    titulo: "Optimización",
+    titulo: "optimización",
     Icon: DoodleSpeed,
+    tint: "color-mix(in oklab, var(--grad-purple) 12%, white)",
     texto:
-      "Tu tienda anda. Bárbaro. ¿Pero anda bien? Velocidad, checkout, catálogo, integraciones que no se rompan un viernes a las 7.",
+      "Tu tienda anda. Bárbaro. ¿Pero anda bien? Velocidad, checkout, catálogo, integraciones que no se rompan un viernes.",
   },
 ];
 
 const pasos = [
   {
     n: "01",
-    titulo: "Me escribís",
+    titulo: "me escribís",
+    Icon: DoodleMail,
+    color: "var(--grad-teal)",
     texto: "Un mail contando qué te vuelve loco de tu operación. Sin formalidades.",
   },
   {
     n: "02",
-    titulo: "Miro tu setup",
-    texto:
-      "Charlamos, reviso cómo laburás hoy y te digo qué se puede arreglar (y qué no).",
+    titulo: "miro tu setup",
+    Icon: DoodleChat,
+    color: "var(--grad-yellow)",
+    texto: "Charlamos, reviso cómo laburás hoy y te digo qué se puede arreglar (y qué no).",
   },
   {
     n: "03",
-    titulo: "Lo hago",
-    texto:
-      "Presupuesto claro, lo construimos, lo dejo andando y te explico cómo funciona.",
+    titulo: "lo hago",
+    Icon: DoodleSpeed,
+    color: "var(--grad-purple)",
+    texto: "Presupuesto claro, lo construimos, lo dejo andando y te explico cómo funciona.",
   },
 ];
 
@@ -94,232 +103,217 @@ function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-paper text-ink">
+    <div className="min-h-screen bg-background text-ink">
       {/* 1. Sticky top bar */}
-      <header className="sticky top-0 z-40 border-b-[3px] border-ink bg-paper">
-        <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3">
+      <header className="sticky top-0 z-40 border-b border-hairline bg-background/85 backdrop-blur-md">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
           <a href="#top" className="flex items-center gap-2" aria-label="papurro, inicio">
-            {/* LOGO SLOT · navbar */}
-            <Logo className="h-14 w-auto" placeholderClassName="text-xl" />
+            <Logo className="h-11 w-auto" placeholderClassName="text-xl" />
           </a>
-          <a href={MAILTO} className="btn-press btn-rainbow px-5 py-3 text-lg">
-            escribime
+          <a href={MAILTO} className="btn-press btn-rainbow px-5 py-2.5 text-base">
+            escribime →
           </a>
         </div>
-        <div className="rainbow-bar h-1.5 w-full" aria-hidden="true" />
       </header>
 
-      <main id="top">
+      <main id="top" className="mx-auto max-w-6xl space-y-6 px-4 py-6 sm:px-6 sm:py-10">
         {/* 2. Hero */}
-        <section
-          className="rainbow-bg border-b-[3px] border-ink px-4 pt-10 pb-14"
-          aria-labelledby="hero-title"
-        >
-          <div className="mx-auto max-w-5xl">
-            <p className="card inline-block px-3 py-2 text-sm font-extrabold">
-              Para tiendas Shopify en Uruguay 🇺🇾
-            </p>
+        <section className="panel wash px-5 py-10 sm:px-10 sm:py-16" aria-labelledby="hero-title">
+          <div className="grid items-center gap-8 md:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <p className="pill px-3 py-1.5 text-xs sm:text-sm">
+                Para tiendas Shopify en Uruguay 🇺🇾
+              </p>
 
-            <div className="card mt-6 p-5 sm:p-8">
               <h1
                 id="hero-title"
-                className="text-[3rem] leading-[1.22] sm:text-6xl md:text-7xl"
+                className="mt-5 text-[2.9rem] leading-[1.06] sm:text-6xl md:text-7xl"
               >
                 hago que tu shopify <span className="marker">labure solo</span>.
               </h1>
 
-              <p className="mt-6 max-w-xl text-lg font-semibold sm:text-xl">
+              <p className="mt-5 max-w-md text-base font-semibold sm:text-lg">
                 Automatización, IA que sirve y atención al cliente ordenada. No soy una
                 agencia: soy una persona con una computadora.
               </p>
 
-              <div className="mt-7">
-                <a
-                  href={MAILTO_LONG}
-                  className="btn-press btn-rainbow px-6 py-4 text-2xl sm:text-3xl"
-                >
-                  contame tu quilombo →
-                </a>
-              </div>
+              <a
+                href={MAILTO_LONG}
+                className="btn-press btn-ink mt-7 px-6 py-4 text-lg sm:text-xl"
+              >
+                contame tu quilombo →
+              </a>
             </div>
 
-            {/* LOGO SLOT · hero centerpiece */}
-            <div className="relative mx-auto mt-14 w-[16rem] sm:w-[20rem]">
-              <div className="card card-hover mascot-idle flex items-center justify-center p-5">
-                <Logo
-                  className="mascot-idle h-auto w-full"
-                  placeholderClassName="text-4xl sm:text-5xl"
-                />
-              </div>
-              <Tape className="-top-3 -left-5 -rotate-[24deg]" />
-              <Tape className="-right-5 -bottom-3 -rotate-[12deg]" />
+            <div className="mx-auto w-[15rem] sm:w-[19rem]">
+              <Logo
+                className="mascot-idle h-auto w-full drop-shadow-[0_24px_40px_rgba(10,17,40,0.22)]"
+                placeholderClassName="text-4xl sm:text-5xl"
+              />
             </div>
           </div>
         </section>
-
-        <Squiggle className="h-3" />
 
         {/* 3. Servicios */}
-        <section className="bg-paper px-4 py-14" aria-labelledby="servicios-title">
-          <div className="mx-auto max-w-5xl">
-            <h2 id="servicios-title" className="grad-text text-4xl sm:text-6xl">
-              ¿qué hacés, papurro?
-            </h2>
-            <ul className="mt-10 grid gap-8 sm:grid-cols-2">
-              {servicios.map(({ titulo, texto, Icon }) => (
-                <li key={titulo} className="card card-hover overflow-hidden">
-                  <div className="rainbow-bar h-3 w-full" aria-hidden="true" />
-                  <div className="p-5">
-                    <Icon className="h-14 w-14" />
-                    <h3 className="mt-4 text-2xl sm:text-3xl">{titulo}</h3>
-                    <p className="mt-3 text-base font-medium">{texto}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+        <section className="card p-5 sm:p-9" aria-labelledby="servicios-title">
+          <h2 id="servicios-title" className="text-3xl sm:text-5xl">
+            ¿qué hacés, <span className="marker">papurro</span>?
+          </h2>
+          <Squiggle className="mt-3" />
 
-        <Squiggle className="h-3" />
+          <ul className="mt-8 grid gap-5 sm:grid-cols-2">
+            {servicios.map(({ titulo, texto, Icon, tint }) => (
+              <li
+                key={titulo}
+                className="card card-hover border border-hairline p-5"
+              >
+                <span className="chip h-14 w-14" style={{ background: tint }}>
+                  <Icon className="h-7 w-7 text-ink" />
+                </span>
+                <h3 className="mt-4 text-xl sm:text-2xl">{titulo}</h3>
+                <p className="mt-2 text-sm leading-relaxed sm:text-base">{texto}</p>
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-7 rounded-3xl bg-[color-mix(in_oklab,var(--grad-purple)_8%,white)] px-5 py-4 text-sm font-semibold sm:text-base">
+            ✨ Todo pensado para que tu Shopify funcione mejor, venda más y te dé tu vida
+            de vuelta.
+          </p>
+        </section>
 
         {/* 4. Quién es */}
-        <section className="rainbow-bg px-4 py-16" aria-labelledby="quien-title">
-          <div className="mx-auto max-w-5xl">
-            <div className="card p-5 sm:p-8">
-              <h2 id="quien-title" className="grad-text text-4xl sm:text-6xl">
-                ¿quién carajo es papurro?
-              </h2>
-              <p className="mt-6 text-lg font-extrabold sm:text-2xl">
-                Papurro no es una agencia. No es un equipo. No es un bot con nombre
-                simpático.
-              </p>
-              <p className="mt-4 text-base font-medium sm:text-lg">
-                Es <span className="marker">una persona</span>. Una sola. Con una
-                computadora y una paciencia rara para los detalles.
-              </p>
-              <p className="mt-4 text-base font-medium sm:text-lg">
-                Trabajo con pocas tiendas a la vez, porque prefiero hacer bien tres cosas
-                que hacer mal treinta.
-              </p>
-              <p className="mt-4 text-base font-medium sm:text-lg">
-                Si me escribís, te contesto yo. Si algo no lo sé hacer, te lo digo. Y si
-                no te sirvo, te lo digo también.
-              </p>
-            </div>
+        <section className="card p-5 sm:p-9" aria-labelledby="quien-title">
+          <h2 id="quien-title" className="text-3xl sm:text-5xl">
+            ¿quién carajo es <span className="marker">papurro</span>?
+          </h2>
+          <Squiggle className="mt-3" />
+
+          <p className="mt-6 text-lg font-extrabold text-ink sm:text-xl">
+            Papurro no es una agencia. No es un equipo. No es un bot con nombre simpático.
+          </p>
+          <div className="mt-4 max-w-2xl space-y-4 text-sm leading-relaxed sm:text-base">
+            <p>
+              Es <span className="marker font-extrabold">una persona</span>. Una sola. Con
+              una computadora y una paciencia rara para los detalles.
+            </p>
+            <p>
+              Trabajo con pocas tiendas a la vez, porque prefiero hacer bien tres cosas que
+              hacer mal treinta.
+            </p>
+            <p>
+              Si me escribís, te contesto yo. Si algo no lo sé hacer, te lo digo. Y si no
+              te sirvo, te lo digo también.
+            </p>
           </div>
+
+          <a href={MAILTO} className="btn-press btn-rainbow mt-7 px-6 py-3 text-base">
+            escribime →
+          </a>
         </section>
 
-        <Squiggle className="h-3" />
-
         {/* 5. Precios */}
-        <section className="bg-paper px-4 py-16" aria-labelledby="precio-title">
-          <div className="mx-auto max-w-5xl">
-            <h2 id="precio-title" className="grad-text text-4xl sm:text-6xl">
-              ¿cuánto sale?
-            </h2>
-            <div className="card mt-8 p-5 sm:p-8">
-              <p className="text-base font-medium sm:text-lg">
-                Cada tienda es un quilombo distinto, así que no vendo planes de $X por mes
-                con estrellitas y letra chica.
-              </p>
-              <p className="mt-4 text-lg font-extrabold sm:text-2xl">
-                Me contás qué te duele → miro tu setup → te paso un número.
-              </p>
-              <p className="mt-4 text-base font-medium sm:text-lg">
-                Presupuesto por proyecto. Sin sorpresas y sin permanencia.
-              </p>
-            </div>
-            <ul className="mt-8 flex flex-wrap gap-4">
-              {["Sin planes mensuales", "Sin letra chica", "Sin vendedor encima"].map(
-                (t) => (
-                  <li key={t} className="pill px-4 py-2 text-sm">
-                    {t}
-                  </li>
-                ),
-              )}
-            </ul>
-          </div>
+        <section className="card p-5 sm:p-9" aria-labelledby="precio-title">
+          <h2 id="precio-title" className="text-3xl sm:text-5xl">
+            ¿cuánto <span className="marker">sale</span>?
+          </h2>
+          <Squiggle className="mt-3" />
+
+          <p className="mt-6 text-sm leading-relaxed sm:text-base">
+            Cada tienda es un quilombo distinto, así que no vendo planes de $X por mes con
+            estrellitas y letra chica.
+          </p>
+          <p className="mt-4 text-lg font-extrabold text-ink sm:text-xl">
+            Me contás qué te duele → miro tu setup → te paso un número.
+          </p>
+          <p className="mt-4 text-sm leading-relaxed sm:text-base">
+            Presupuesto por proyecto. Sin sorpresas y sin permanencia.
+          </p>
+
+          <ul className="mt-6 flex flex-wrap gap-3">
+            {["Sin planes mensuales", "Sin letra chica", "Sin vendedor encima"].map((t) => (
+              <li key={t} className="pill px-4 py-2 text-xs sm:text-sm">
+                {t}
+              </li>
+            ))}
+          </ul>
         </section>
 
         {/* 6. Cómo laburamos */}
-        <section
-          className="border-t-[3px] border-ink bg-paper px-4 py-16"
-          aria-labelledby="pasos-title"
-        >
-          <div className="mx-auto max-w-5xl">
-            <h2 id="pasos-title" className="grad-text text-4xl sm:text-6xl">
-              cómo laburamos
-            </h2>
-            <ol className="mt-10 grid gap-8 sm:grid-cols-3">
-              {pasos.map(({ n, titulo, texto }) => (
-                <li key={n} className="flex gap-4 sm:block">
-                  <span className="pill flex h-20 w-20 shrink-0 items-center justify-center font-display text-2xl">
-                    {n}
-                  </span>
-                  <div className="sm:mt-5">
-                    <h3 className="text-2xl">{titulo}</h3>
-                    <p className="mt-2 text-base font-medium">{texto}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
+        <section className="card p-5 sm:p-9" aria-labelledby="pasos-title">
+          <h2 id="pasos-title" className="text-3xl sm:text-5xl">
+            cómo <span className="marker">laburamos</span>
+          </h2>
+          <Squiggle className="mt-3" />
+
+          <ol className="mt-8 grid gap-5 sm:grid-cols-3">
+            {pasos.map(({ n, titulo, texto, Icon, color }) => (
+              <li key={n} className="card card-hover border border-hairline p-5">
+                <span
+                  className="pill-grad h-11 w-11 font-display text-base"
+                  style={{ backgroundImage: "none", background: color }}
+                >
+                  {n}
+                </span>
+                <Icon className="mt-5 h-9 w-9 text-ink" />
+                <h3 className="mt-4 text-xl">{titulo}</h3>
+                <p className="mt-2 text-sm leading-relaxed">{texto}</p>
+              </li>
+            ))}
+          </ol>
+
+          <p className="mt-7 flex items-center gap-3 rounded-3xl bg-[color-mix(in_oklab,var(--grad-teal)_10%,white)] px-5 py-4 text-sm font-semibold">
+            <DoodleClock className="h-6 w-6 shrink-0 text-ink" />
+            Contesto en 24-48hs hábiles. Soy uno solo, tené paciencia 🐶
+          </p>
         </section>
 
-        <Squiggle className="h-3" />
-
         {/* 7. CTA final */}
-        <section className="rainbow-bg px-4 py-16" aria-labelledby="cta-title">
-          <div className="mx-auto max-w-5xl">
-            <div className="card p-5 sm:p-8">
-              <h2 id="cta-title" className="grad-text text-5xl sm:text-7xl">
-                ¿arrancamos?
-              </h2>
-              <p className="mt-6 max-w-xl text-lg font-extrabold sm:text-2xl">
-                Escribime a info@papurro.com y contame qué te está haciendo perder tiempo.
-              </p>
+        <section
+          className="panel wash px-5 py-12 text-center sm:px-10 sm:py-16"
+          aria-labelledby="cta-title"
+        >
+          <h2 id="cta-title" className="text-4xl sm:text-6xl">
+            ¿arrancamos<span className="marker">?</span>
+          </h2>
 
-              <a
-                href={MAILTO_LONG}
-                className="btn-press btn-ink mt-8 block px-5 py-5 text-center text-2xl sm:inline-block sm:text-4xl"
-              >
-                info@papurro.com
-              </a>
+          <p className="mx-auto mt-5 max-w-md text-base font-semibold text-ink sm:text-lg">
+            Escribime a info@papurro.com y contame qué te está haciendo perder tiempo.
+          </p>
 
-              <div className="relative mt-6 flex items-center gap-4">
-                <button
-                  type="button"
-                  onClick={copiar}
-                  className="btn-press bg-paper px-5 py-3 text-base"
-                >
-                  copiar el mail
-                </button>
-                {copiado && (
-                  <span role="status" className="pill px-3 py-2 font-display text-base">
-                    ¡copiado!
-                  </span>
-                )}
-              </div>
+          <a
+            href={MAILTO_LONG}
+            className="btn-press btn-ink mt-8 w-full px-6 py-5 text-xl sm:w-auto sm:text-3xl"
+          >
+            <DoodleMail className="h-7 w-7" />
+            info@papurro.com
+          </a>
 
-              <p className="mt-8 text-sm font-extrabold">
-                Contesto en 24-48hs hábiles. Soy uno solo, tené paciencia 🐶
-              </p>
-            </div>
+          <div className="mt-6 flex items-center justify-center gap-3">
+            <button
+              type="button"
+              onClick={copiar}
+              className="btn-press bg-paper px-5 py-2.5 text-sm shadow-soft"
+            >
+              copiar el mail
+            </button>
+            {copiado && (
+              <span role="status" className="pill-grad px-3 py-2 font-display text-sm">
+                ¡copiado!
+              </span>
+            )}
           </div>
         </section>
       </main>
 
       {/* 8. Footer */}
-      <footer className="border-t-[3px] border-ink bg-ink px-4 py-10 text-paper">
-        <div className="mx-auto flex max-w-5xl flex-col items-start gap-4 sm:flex-row sm:items-center">
-          {/* LOGO SLOT · footer */}
-          <span className="grad-border inline-flex shrink-0 items-center p-2">
-            <Logo className="h-12 w-auto" placeholderClassName="text-lg" />
-          </span>
-          <p className="text-sm font-medium">
-            <Wordmark className="text-lg" /> · Shopify, automatización e IA para tiendas
+      <footer className="mt-6 bg-ink px-4 py-10 text-paper sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <Logo className="h-11 w-auto shrink-0" placeholderClassName="text-lg" />
+          <p className="text-xs font-medium text-paper/70 sm:text-sm">
+            <Wordmark className="text-base" /> · Shopify, automatización e IA para tiendas
             uruguayas ·{" "}
-            <a href={MAILTO} className="underline decoration-[3px] underline-offset-4">
+            <a href={MAILTO} className="underline underline-offset-4">
               info@papurro.com
             </a>{" "}
             · Hecho en Uruguay 🧉 · © {new Date().getFullYear()}
