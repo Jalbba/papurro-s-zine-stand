@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Logo, Wordmark } from "@/components/Logo";
+import { Logo, PMark } from "@/components/Logo";
 import {
   DoodleChat,
   DoodleClock,
