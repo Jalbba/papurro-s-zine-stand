@@ -95,11 +95,53 @@ Small line: "Contesto en 24-48hs hábiles. Soy uno solo, tené paciencia 🐶"
 ## TECH
 - Single page, React + Tailwind + TypeScript. No backend, no database, no auth, no forms — only `mailto:` links and a clipboard copy.
 - Semantic HTML, real `<section>`s, accessible contrast (ink on all those brights), `alt`/`aria-label` on the SVGs.
-- SEO: `<title>` "Papurro · Automatización e IA para tiendas Shopify en Uruguay", meta description in Spanish, `lang="es-UY"`, Open Graph tags.
+- SEO/GEO: see the dedicated section below — the site is prerendered to static HTML per route, with per-country pages, JSON-LD, hreflang, sitemap and `llms.txt`.
 - Smooth scroll to sections from the top bar.
 - Fast: no heavy libs, no image assets, everything inline SVG + CSS.
 
 Make it feel like a photocopied zine someone taped to a wall — loud, warm, human, and clearly made by a person with a sense of humor.
+
+## SEO / GEO
+
+The site is a small React SPA that gets **prerendered to static HTML at build time**, one file
+per route. This matters because Googlebot runs JavaScript but the crawlers behind AI answers
+(GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot…) generally do not: without prerendering they
+would see an empty page.
+
+```
+npm run build
+  1. vite build                                    → client bundle
+  2. vite build --ssr src/entry-server.tsx         → server bundle (dist-ssr, temporary)
+  3. node scripts/prerender.mjs                    → dist/**/index.html + sitemap.xml + llms.txt
+```
+
+**Routes** live in `src/routes.tsx`. Each one carries its `HeadData` (title, description,
+lang, og:locale, JSON-LD). Adding a page = adding an entry there; sitemap, hreflang and
+`llms.txt` follow automatically.
+
+| Ruta | Para qué |
+| --- | --- |
+| `/` | Home genérica, hub de enlaces internos |
+| `/uruguay/` `/argentina/` `/chile/` | Landing por país: copy local, FAQ local, misma oferta |
+| `/privacidad/` | Transparencia (y requisito habitual de las plataformas de ads) |
+| `/404.html` | Fallback de GitHub Pages, `noindex` |
+
+**Qué se genera en cada página**: canonical, `robots`, Open Graph + Twitter card con
+`/og.png`, cluster `hreflang` (`es`, `es-UY`, `es-AR`, `es-CL`, `x-default`) y un `@graph` de
+JSON-LD con `ProfessionalService`, `Person`, `WebSite`, `WebPage`, `BreadcrumbList`,
+`FAQPage` y `Service`.
+
+**Reglas para no romperlo**
+
+- `index.html` tiene que conservar los marcadores `<!--seo:start-->`, `<!--seo:end-->` y
+  `<!--app-html-->`: el prerender falla el build si no están.
+- Las preguntas del `FAQPage` tienen que estar **visibles** en la página. El contenido vive en
+  `src/content/`, y de ahí salen tanto el HTML como el JSON-LD, así que no se desincronizan.
+- Nada de testimonios, logos, métricas ni casos de éxito inventados: tampoco en el marcado
+  estructurado. `llms.txt` dice explícitamente que no hay social proof publicado.
+- `public/og.png` se regenera a mano con `CHROME=/ruta/a/chrome node scripts/og-image.mjs`
+  (necesita un Chromium headless; no corre en CI).
+
 
 This project was built with [Lovable](https://lovable.dev).
 

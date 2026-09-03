@@ -1,37 +1,63 @@
 <!doctype html>
-<html lang="es-UY">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Papurro" />
 
-    <title>Papurro · Automatización e IA para tiendas Shopify en Uruguay</title>
+    <!--seo:start-->
+    <title>Automatización Shopify en Uruguay, Argentina y Chile · Papurro</title>
     <meta
       name="description"
-      content="Soy una persona (una sola) que ayuda a tiendas Shopify uruguayas con automatización, IA aplicada, atención al cliente y optimización. Escribime a info@papurro.com."
+      content="Una persona (no una agencia) que automatiza tiendas Shopify en Uruguay, Argentina y Chile: IA aplicada, atención al cliente y optimización. info@papurro.com"
     />
-    <meta property="og:title" content="Papurro · Automatización e IA para tiendas Shopify en Uruguay" />
+    <link rel="canonical" href="https://papurro.com/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Papurro" />
+    <meta name="theme-color" content="#fe3d7c" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Papurro" />
+    <meta property="og:title" content="Automatización Shopify en Uruguay, Argentina y Chile · Papurro" />
     <meta
       property="og:description"
-      content="Soy una persona (una sola) que ayuda a tiendas Shopify uruguayas con automatización, IA aplicada, atención al cliente y optimización. Escribime a info@papurro.com."
+      content="Una persona (no una agencia) que automatiza tiendas Shopify en Uruguay, Argentina y Chile: IA aplicada, atención al cliente y optimización. info@papurro.com"
     />
-    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://papurro.com/" />
     <meta property="og:locale" content="es_UY" />
+    <meta property="og:image" content="https://papurro.com/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Automatización Shopify en Uruguay, Argentina y Chile · Papurro" />
+    <meta
+      name="twitter:description"
+      content="Una persona (no una agencia) que automatiza tiendas Shopify en Uruguay, Argentina y Chile: IA aplicada, atención al cliente y optimización. info@papurro.com"
+    />
+    <meta name="twitter:image" content="https://papurro.com/og.png" />
+    <!--seo:end-->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- La hoja de fuentes se carga sin bloquear el primer render. -->
     <link
-      rel="stylesheet"
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;800&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;800&display=swap"
+      />
+    </noscript>
+
+    <!-- La P del hero es el LCP en mobile. -->
+    <link rel="preload" as="image" href="/papurro-p.png" fetchpriority="high" />
 
     <link rel="icon" type="image/png" href="/favicon.png?v=3" />
     <link rel="shortcut icon" type="image/png" href="/favicon.png?v=3" />
     <link rel="apple-touch-icon" href="/favicon.png?v=3" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
