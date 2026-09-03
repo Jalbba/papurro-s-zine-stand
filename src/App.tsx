@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Logo, PMark } from "@/components/Logo";
 import {
   DoodleChat,
@@ -14,34 +14,41 @@ const MAILTO = "mailto:info@papurro.com";
 const MAILTO_LONG =
   "mailto:info@papurro.com?subject=Hola%20Papurro&body=Hola!%20Tengo%20una%20tienda%20Shopify%20y...";
 
+const paises = [
+  { nombre: "Uruguay", bandera: "🇺🇾" },
+  { nombre: "Argentina", bandera: "🇦🇷" },
+  { nombre: "Chile", bandera: "🇨🇱" },
+  { nombre: "USA", bandera: "🇺🇸" },
+];
+
 const servicios = [
   {
     titulo: "automatización",
     Icon: DoodleGear,
     tint: "color-mix(in oklab, var(--grad-teal) 14%, white)",
     texto:
-      "Esas cosas que hacés a mano 40 veces por día. Que las haga una máquina y vos andá a tomar un mate.",
+      "Conecto tu tienda con las herramientas que ya usás para que tareas repetitivas —cargar pedidos, actualizar stock, generar reportes— pasen a hacerse solas.",
   },
   {
     titulo: "ideas que sirven",
     Icon: DoodleSpark,
     tint: "color-mix(in oklab, var(--grad-pink) 12%, white)",
     texto:
-      "IA que resuelve cosas, no IA de folleto. Clasificar pedidos, redactar respuestas, resumir líos.",
+      "Aplico IA a problemas concretos de tu operación: clasificar pedidos, redactar respuestas, resumir información. Nada de demos que no se usan.",
   },
   {
     titulo: "atención al cliente",
     Icon: DoodleChat,
     tint: "color-mix(in oklab, var(--grad-yellow) 20%, white)",
     texto:
-      "Tickets ordenados, respuestas rápidas, menos «che, dónde está mi pedido». Tu cliente contento y vos durmiendo.",
+      "Organizo tus canales de soporte para que las consultas se respondan más rápido y ningún ticket quede sin seguimiento.",
   },
   {
     titulo: "optimización",
     Icon: DoodleSpeed,
     tint: "color-mix(in oklab, var(--grad-purple) 12%, white)",
     texto:
-      "Tu tienda anda. Bárbaro. ¿Pero anda bien? Velocidad, checkout, catálogo, integraciones que no se rompan un viernes.",
+      "Reviso velocidad de carga, checkout, catálogo e integraciones para detectar y corregir lo que le está costando ventas a tu tienda.",
   },
 ];
 
@@ -71,6 +78,14 @@ const pasos = [
 
 export default function App() {
   const [copiado, setCopiado] = useState(false);
+  const [paisIdx, setPaisIdx] = useState(0);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setPaisIdx((i) => (i + 1) % paises.length);
+    }, 4000);
+    return () => window.clearInterval(id);
+  }, []);
 
   const copiar = async () => {
     try {
@@ -81,6 +96,8 @@ export default function App() {
     setCopiado(true);
     window.setTimeout(() => setCopiado(false), 2500);
   };
+
+  const pais = paises[paisIdx]!;
 
   return (
     <div className="min-h-screen bg-background text-ink">
@@ -102,26 +119,29 @@ export default function App() {
           <div className="grid items-center gap-8 md:grid-cols-[1.1fr_0.9fr]">
             <div>
               <p className="pill px-3 py-1.5 text-xs sm:text-sm">
-                Para tiendas Shopify en Uruguay 🇺🇾
+                Para tiendas Shopify en{" "}
+                <span aria-live="polite">
+                  {pais.nombre} {pais.bandera}
+                </span>
               </p>
 
               <h1
                 id="hero-title"
                 className="mt-5 text-[2.9rem] leading-[1.06] sm:text-6xl md:text-7xl"
               >
-                hago que tu shopify <span className="marker">labure solo</span>.
+                hagamos que tu shopify <span className="marker">labure solo</span>.
               </h1>
 
               <p className="mt-5 max-w-md text-base font-semibold sm:text-lg">
-                Automatización, IA que sirve y atención al cliente ordenada. No soy una
-                agencia: soy una persona con una computadora.
+                Automatización, implementación IA y atención al cliente. No soy una
+                agencia. Soy Papurro.
               </p>
 
               <a
                 href={MAILTO_LONG}
                 className="btn-press btn-ink mt-7 px-6 py-4 text-lg sm:text-xl"
               >
-                contame qué te vuelve loco →
+                organicemos una call →
               </a>
             </div>
 
@@ -163,7 +183,7 @@ export default function App() {
         {/* 4. Quién es */}
         <section className="card p-5 sm:p-9" aria-labelledby="quien-title">
           <h2 id="quien-title" className="text-3xl sm:text-5xl">
-            ¿quién carajo es <span className="marker">papurro</span>?
+            ¿quién es <span className="marker">papurro</span>?
           </h2>
           <Squiggle className="mt-3" />
 
