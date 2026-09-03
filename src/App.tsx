@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Logo, PMark } from "@/components/Logo";
 import {
@@ -14,25 +13,6 @@ import {
 const MAILTO = "mailto:info@papurro.com";
 const MAILTO_LONG =
   "mailto:info@papurro.com?subject=Hola%20Papurro&body=Hola!%20Tengo%20una%20tienda%20Shopify%20y...";
-
-const TITLE = "Papurro · Automatización e IA para tiendas Shopify en Uruguay";
-const DESCRIPTION =
-  "Soy una persona (una sola) que ayuda a tiendas Shopify uruguayas con automatización, IA aplicada, atención al cliente y optimización. Escribime a info@papurro.com.";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-      { property: "og:type", content: "website" },
-      { property: "og:locale", content: "es_UY" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: Index,
-});
 
 const servicios = [
   {
@@ -89,7 +69,7 @@ const pasos = [
   },
 ];
 
-function Index() {
+export default function App() {
   const [copiado, setCopiado] = useState(false);
 
   const copiar = async () => {

@@ -1,7 +1,5 @@
-import pAsset from "@/assets/papurro-p.png.asset.json";
-
 /** Transparent 3D "P" brand mark. */
-export const LOGO_SRC: string = pAsset.url;
+export const LOGO_SRC = "/papurro-p.png";
 
 type LogoProps = {
   className?: string;
