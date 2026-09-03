@@ -1,35 +1,30 @@
-import logoAsset from "@/assets/papurro-logo.png.asset.json";
+import pAsset from "@/assets/papurro-p.png.asset.json";
 
-/**
- * SINGLE SWAP POINT for the real logo artwork.
- * Points at the client's PNG on the CDN; navbar, hero and footer all use it.
- */
-export const LOGO_SRC: string | null = logoAsset.url;
+/** Transparent 3D "P" brand mark. */
+export const LOGO_SRC: string = pAsset.url;
 
 type LogoProps = {
   className?: string;
-  /** Text size for the placeholder wordmark. */
+  /** Text size for the wordmark next to the mark. */
   placeholderClassName?: string;
 };
 
-/** Gradient-filled "papurro" wordmark with a dark outline, sticker style. */
+/** Gradient "papurro" wordmark. */
 export function Wordmark({ className }: { className?: string }) {
-  return (
-    <span className={`wordmark ${className ?? ""}`} data-text="papurro">
-      papurro
-    </span>
-  );
+  return <span className={`wordmark ${className ?? ""}`}>papurro</span>;
 }
 
-export function Logo({ className, placeholderClassName }: LogoProps) {
-  if (LOGO_SRC) {
-    return <img src={LOGO_SRC} alt="Papurro" className={className} decoding="async" />;
-  }
+/** Just the P mark. */
+export function PMark({ className }: { className?: string }) {
+  return <img src={LOGO_SRC} alt="Papurro" className={className} decoding="async" />;
+}
 
+/** P mark + wordmark lockup (navbar / footer). */
+export function Logo({ className, placeholderClassName }: LogoProps) {
   return (
-    <span className="card inline-flex items-center justify-center px-4 py-3">
+    <span className="inline-flex items-center gap-2">
+      <PMark className={className ?? "h-9 w-auto"} />
       <Wordmark className={placeholderClassName ?? "text-2xl"} />
     </span>
   );
-
 }

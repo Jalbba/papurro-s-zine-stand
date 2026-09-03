@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Logo, Wordmark } from "@/components/Logo";
+import { Logo, PMark } from "@/components/Logo";
 import {
   DoodleChat,
   DoodleClock,
@@ -145,12 +145,10 @@ function Index() {
               </a>
             </div>
 
-            <div className="mx-auto w-[15rem] sm:w-[19rem]">
-              <Logo
-                className="mascot-idle h-auto w-full drop-shadow-[0_24px_40px_rgba(10,17,40,0.22)]"
-                placeholderClassName="text-4xl sm:text-5xl"
-              />
+            <div className="mx-auto w-[15rem] sm:w-[21rem]">
+              <PMark className="mascot-idle h-auto w-full drop-shadow-[0_30px_45px_rgba(10,17,40,0.25)]" />
             </div>
+
           </div>
         </section>
 
@@ -309,10 +307,10 @@ function Index() {
       {/* 8. Footer */}
       <footer className="mt-6 bg-ink px-4 py-10 text-paper sm:px-6">
         <div className="mx-auto flex max-w-6xl flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <Logo className="h-11 w-auto shrink-0" placeholderClassName="text-lg" />
+          <Logo className="h-9 w-auto shrink-0" placeholderClassName="text-2xl" />
           <p className="text-xs font-medium text-paper/70 sm:text-sm">
-            <Wordmark className="text-base" /> · Shopify, automatización e IA para tiendas
-            uruguayas ·{" "}
+            Shopify, automatización e IA para tiendas uruguayas ·{" "}
+
             <a href={MAILTO} className="underline underline-offset-4">
               info@papurro.com
             </a>{" "}
