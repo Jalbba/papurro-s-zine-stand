@@ -47,7 +47,7 @@ const servicios = [
     Icon: DoodleSpark,
     tint: "color-mix(in oklab, var(--grad-pink) 12%, white)",
     texto:
-      "IA que resuelve cosas, no IA de folleto. Clasificar pedidos, redactar respuestas, resumir quilombos.",
+      "IA que resuelve cosas, no IA de folleto. Clasificar pedidos, redactar respuestas, resumir líos.",
   },
   {
     titulo: "atención al cliente",
@@ -141,7 +141,7 @@ function Index() {
                 href={MAILTO_LONG}
                 className="btn-press btn-ink mt-7 px-6 py-4 text-lg sm:text-xl"
               >
-                contame tu quilombo →
+                contame qué te vuelve loco →
               </a>
             </div>
 
@@ -218,7 +218,7 @@ function Index() {
           <Squiggle className="mt-3" />
 
           <p className="mt-6 text-sm leading-relaxed sm:text-base">
-            Cada tienda es un quilombo distinto, así que no vendo planes de $X por mes con
+            Cada tienda es un lío distinto, así que no vendo planes de $X por mes con
             estrellitas y letra chica.
           </p>
           <p className="mt-4 text-lg font-extrabold text-ink sm:text-xl">
