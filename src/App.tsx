@@ -83,7 +83,7 @@ export default function App() {
   useEffect(() => {
     const id = window.setInterval(() => {
       setPaisIdx((i) => (i + 1) % paises.length);
-    }, 4000);
+    }, 2000);
     return () => window.clearInterval(id);
   }, []);
 
