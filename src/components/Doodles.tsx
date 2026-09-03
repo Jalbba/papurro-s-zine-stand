@@ -2,56 +2,44 @@ type DoodleProps = { className?: string };
 
 const base = {
   fill: "none",
-  strokeWidth: 4,
+  stroke: "currentColor",
+  strokeWidth: 3,
   strokeLinecap: "round" as const,
   strokeLinejoin: "round" as const,
 };
 
-/** Shared rainbow gradient def for the icon strokes. */
-function RainbowDef({ id }: { id: string }) {
-  return (
-    <defs>
-      <linearGradient id={id} x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stopColor="var(--grad-teal)" />
-        <stop offset="20%" stopColor="var(--grad-lime)" />
-        <stop offset="40%" stopColor="var(--grad-yellow)" />
-        <stop offset="60%" stopColor="var(--grad-orange)" />
-        <stop offset="80%" stopColor="var(--grad-pink)" />
-        <stop offset="100%" stopColor="var(--grad-purple)" />
-      </linearGradient>
-    </defs>
-  );
-}
-
-/** Full-width rainbow section divider bar. */
+/** Small hand-drawn pink squiggle used as a heading underline. */
 export function Squiggle({ className }: DoodleProps) {
   return (
-    <div
+    <svg
+      viewBox="0 0 80 12"
       aria-hidden="true"
-      className={`rainbow-bar w-full border-y-[3px] border-ink ${className ?? ""}`}
-    />
-  );
-}
-
-/** Gears: automatización */
-export function DoodleGear({ className }: DoodleProps) {
-  return (
-    <svg viewBox="0 0 64 64" className={className} aria-hidden="true" {...base} stroke="url(#g-gear)">
-      <RainbowDef id="g-gear" />
-      <path d="M25 10l4-5h9l3 6 6 2 6-3 5 7-4 6 1 6 6 4-3 8-7 0-4 5 1 7-8 3-5-6-6 1-4 5-7-5 2-7-4-5-7 1-2-8 6-4 1-6-5-5z" />
-      <circle cx="31" cy="33" r="8" />
+      className={`h-3 w-20 text-pink ${className ?? ""}`}
+      {...base}
+      strokeWidth={3}
+    >
+      <path d="M2 8c6-8 12 6 18-1s12 7 18 0 12 6 18-2" />
     </svg>
   );
 }
 
-/** Lightbulb spark: IA aplicada */
+/** Gear: automatización */
+export function DoodleGear({ className }: DoodleProps) {
+  return (
+    <svg viewBox="0 0 64 64" className={className} aria-hidden="true" {...base}>
+      <circle cx="32" cy="32" r="9" />
+      <path d="M32 8v7M32 49v7M8 32h7M49 32h7M15 15l5 5M44 44l5 5M49 15l-5 5M20 44l-5 5" />
+      <circle cx="32" cy="32" r="20" strokeDasharray="3 8" />
+    </svg>
+  );
+}
+
+/** Lightbulb: IA aplicada */
 export function DoodleSpark({ className }: DoodleProps) {
   return (
-    <svg viewBox="0 0 64 64" className={className} aria-hidden="true" {...base} stroke="url(#g-spark)">
-      <RainbowDef id="g-spark" />
-      <path d="M31 8c-11 0-19 8-18 18 0 6 5 10 7 15h21c2-6 8-9 8-16 0-9-8-17-18-17z" />
-      <path d="M22 47h20M25 54h14" />
-      <path d="M8 14l-5-4M55 14l6-5" />
+    <svg viewBox="0 0 64 64" className={className} aria-hidden="true" {...base}>
+      <path d="M32 10c-9 0-16 7-16 15 0 5 3 8 5 11 1 2 2 3 2 5h18c0-2 1-3 2-5 2-3 5-6 5-11 0-8-7-15-16-15z" />
+      <path d="M26 48h12M28 54h8" />
     </svg>
   );
 }
@@ -59,33 +47,41 @@ export function DoodleSpark({ className }: DoodleProps) {
 /** Speech bubble: atención al cliente */
 export function DoodleChat({ className }: DoodleProps) {
   return (
-    <svg viewBox="0 0 64 64" className={className} aria-hidden="true" {...base} stroke="url(#g-chat)">
-      <RainbowDef id="g-chat" />
-      <path d="M8 14c0-4 3-7 8-7h34c5 0 8 4 7 8l-1 18c0 4-3 7-8 7H27l-13 10 2-11c-5-1-8-4-8-9z" />
-      <path d="M19 20h26M19 29h17" />
+    <svg viewBox="0 0 64 64" className={className} aria-hidden="true" {...base}>
+      <path d="M10 18a6 6 0 016-6h32a6 6 0 016 6v18a6 6 0 01-6 6H28l-12 9 2-9h-2a6 6 0 01-6-6z" />
+      <path d="M23 27h.01M32 27h.01M41 27h.01" strokeWidth={5} />
     </svg>
   );
 }
 
-/** Speed gauge: optimización */
+/** Rocket / speed: optimización */
 export function DoodleSpeed({ className }: DoodleProps) {
   return (
-    <svg viewBox="0 0 64 64" className={className} aria-hidden="true" {...base} stroke="url(#g-speed)">
-      <RainbowDef id="g-speed" />
-      <path d="M6 44c-3-16 9-30 26-30 18 0 29 15 26 31" />
-      <path d="M33 40l14-15" />
-      <circle cx="32" cy="43" r="4" />
-      <path d="M13 30l-5-3M32 16v-6M52 30l5-3" />
+    <svg viewBox="0 0 64 64" className={className} aria-hidden="true" {...base}>
+      <path d="M34 38c12-4 20-14 20-28-14 0-24 8-28 20" />
+      <path d="M26 30l8 8" />
+      <path d="M22 38c-4 2-6 6-6 12 6 0 10-2 12-6" />
+      <path d="M14 50l-4 4" />
     </svg>
   );
 }
 
-/** Gradient tape strip. */
-export function Tape({ className }: DoodleProps) {
+/** Envelope: contacto */
+export function DoodleMail({ className }: DoodleProps) {
   return (
-    <span
-      aria-hidden="true"
-      className={`rainbow-bar pointer-events-none absolute h-6 w-20 border-[3px] border-ink opacity-90 ${className ?? ""}`}
-    />
+    <svg viewBox="0 0 64 64" className={className} aria-hidden="true" {...base}>
+      <rect x="8" y="16" width="48" height="32" rx="5" />
+      <path d="M10 20l22 16 22-16" />
+    </svg>
+  );
+}
+
+/** Clock: tiempos de respuesta */
+export function DoodleClock({ className }: DoodleProps) {
+  return (
+    <svg viewBox="0 0 64 64" className={className} aria-hidden="true" {...base}>
+      <circle cx="32" cy="32" r="22" />
+      <path d="M32 18v14l10 6" />
+    </svg>
   );
 }
