@@ -5,14 +5,16 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Papurro design system: rainbow-gradient sticker/cartoon.
- * Gradient stops sampled from the client logo. Body copy always on solid
- * white panels in --ink; gradients carry buttons, wordmark, bars and badges.
+ * Papurro design system: soft rainbow-gradient washes, airy white cards,
+ * rounded type, thin outline icons. Navy ink for copy, gradient only for
+ * accents (headings words, pills, buttons, washes).
  */
 
 @theme inline {
   --color-paper: var(--paper);
   --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-hairline: var(--hairline);
 
   --color-teal: var(--grad-teal);
   --color-lime: var(--grad-lime);
@@ -20,29 +22,29 @@
   --color-orange: var(--grad-orange);
   --color-pink: var(--grad-pink);
   --color-purple: var(--grad-purple);
-  /* legacy alias so older markup keeps working */
   --color-cyan: var(--grad-teal);
 
-  --color-background: var(--paper);
+  --color-background: var(--shell);
   --color-foreground: var(--ink);
-  --color-border: var(--ink);
+  --color-border: var(--hairline);
   --color-primary: var(--grad-pink);
   --color-primary-foreground: var(--paper);
-  --color-muted-foreground: var(--ink);
-  --color-ring: var(--ink);
+  --color-muted-foreground: var(--ink-soft);
+  --color-ring: var(--grad-purple);
 
-  --font-display: "Baloo 2", "Archivo Black", system-ui, sans-serif;
+  --font-display: "Baloo 2", system-ui, sans-serif;
   --font-sans: "Nunito", ui-sans-serif, sans-serif;
 
-  --shadow-hard: 6px 6px 0 var(--ink);
-  --shadow-hard-sm: 4px 4px 0 var(--ink);
-  --shadow-hard-lg: 10px 10px 0 var(--ink);
+  --shadow-soft: 0 10px 30px -12px color-mix(in oklab, var(--ink) 22%, transparent);
+  --shadow-soft-lg: 0 24px 60px -20px color-mix(in oklab, var(--ink) 28%, transparent);
 }
 
 :root {
   --paper: #ffffff;
-  --off-paper: #fbfaff;
+  --shell: #f6f7fb;
   --ink: #0a1128;
+  --ink-soft: #5b6479;
+  --hairline: color-mix(in oklab, #0a1128 10%, transparent);
 
   --grad-teal: #01c8d1;
   --grad-lime: #9eca2f;
@@ -70,28 +72,47 @@
     var(--grad-purple)
   );
 
-  --radius: 14px;
+  /* Soft pastel wash used behind hero / CTA panels */
+  --wash: radial-gradient(
+      120% 90% at 8% 12%,
+      color-mix(in oklab, var(--grad-teal) 26%, white) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      110% 80% at 95% 8%,
+      color-mix(in oklab, var(--grad-yellow) 30%, white) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      120% 100% at 85% 100%,
+      color-mix(in oklab, var(--grad-purple) 26%, white) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      100% 90% at 10% 100%,
+      color-mix(in oklab, var(--grad-pink) 22%, white) 0%,
+      transparent 60%
+    ),
+    linear-gradient(#fff, #fff);
+
+  --radius: 26px;
 }
 
 @layer base {
-  * {
-    border-color: var(--ink);
-  }
-
   html {
     scroll-behavior: smooth;
-    background-color: var(--off-paper);
+    background-color: var(--shell);
   }
 
   body {
-    background-color: var(--off-paper);
+    background-color: var(--shell);
     color: var(--ink);
     font-family: var(--font-sans);
     -webkit-tap-highlight-color: transparent;
   }
 
   ::selection {
-    background: var(--grad-yellow);
+    background: color-mix(in oklab, var(--grad-yellow) 60%, white);
     color: var(--ink);
   }
 
@@ -101,8 +122,12 @@
     font-family: var(--font-display);
     font-weight: 800;
     letter-spacing: -0.02em;
-    line-height: 1.05;
+    line-height: 1.06;
     text-transform: lowercase;
+  }
+
+  p {
+    color: var(--ink-soft);
   }
 }
 
@@ -116,7 +141,10 @@
   background-image: var(--rainbow-x);
 }
 
-/* Gradient text fill (headings, accents) */
+@utility wash {
+  background-image: var(--wash);
+}
+
 @utility grad-text {
   background-image: var(--rainbow-x);
   -webkit-background-clip: text;
@@ -125,98 +153,115 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* Gradient border via padding trick */
-@utility grad-border {
-  border: 3px solid transparent;
-  border-radius: var(--radius);
-  background:
-    linear-gradient(var(--paper), var(--paper)) padding-box,
-    var(--rainbow) border-box;
-  box-shadow: 6px 6px 0 var(--ink);
-}
-
-/* ---------- Cards & buttons ---------- */
+/* ---------- Cards & panels ---------- */
 
 @utility card {
-  border: 3px solid var(--ink);
   border-radius: var(--radius);
   background: var(--paper);
-  box-shadow: 6px 6px 0 var(--ink);
+  box-shadow:
+    0 1px 0 var(--hairline),
+    0 12px 32px -18px color-mix(in oklab, var(--ink) 30%, transparent);
   transition:
-    transform 0.15s ease-out,
-    box-shadow 0.15s ease-out;
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 @utility card-hover {
   &:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 10px 10px 0 var(--ink);
+    transform: translateY(-3px);
+    box-shadow: 0 26px 55px -24px color-mix(in oklab, var(--ink) 38%, transparent);
   }
 }
 
+@utility panel {
+  border-radius: 34px;
+  overflow: hidden;
+  box-shadow: 0 30px 70px -30px color-mix(in oklab, var(--ink) 34%, transparent);
+}
+
+/* ---------- Buttons ---------- */
+
 @utility btn-press {
-  display: inline-block;
-  border: 3px solid var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
   border-radius: 999px;
-  box-shadow: 5px 5px 0 var(--ink);
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   text-transform: lowercase;
   letter-spacing: -0.01em;
   transition:
-    transform 0.08s ease-out,
-    box-shadow 0.08s ease-out,
-    filter 0.15s ease-out;
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    filter 0.18s ease;
 
   &:hover {
-    box-shadow: 8px 8px 0 var(--ink);
-    filter: saturate(1.15) brightness(1.03);
+    transform: translateY(-2px);
+    filter: saturate(1.08);
   }
 
   &:active {
-    transform: translate(3px, 3px);
-    box-shadow: 0 0 0 var(--ink);
+    transform: translateY(0);
   }
 }
 
-/* Primary CTA: rainbow fill, ink text */
 @utility btn-rainbow {
   background-image: var(--rainbow-x);
   color: var(--ink);
+  box-shadow: 0 14px 28px -14px color-mix(in oklab, var(--grad-purple) 70%, transparent);
 }
 
 @utility btn-ink {
   background: var(--ink);
   color: var(--paper);
+  box-shadow: 0 16px 34px -16px color-mix(in oklab, var(--ink) 70%, transparent);
 }
 
-/* Small gradient badge/pill */
+/* Small pill / badge */
 @utility pill {
-  display: inline-block;
-  border: 3px solid var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--ink) 5%, white);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+@utility pill-grad {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 999px;
   background-image: var(--rainbow-x);
-  color: var(--ink);
+  color: white;
   font-weight: 800;
-  box-shadow: 4px 4px 0 var(--ink);
+  box-shadow: 0 10px 22px -12px color-mix(in oklab, var(--grad-pink) 70%, transparent);
 }
 
-/* Highlighted inline words */
+/* Tinted round icon chip */
+@utility chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--grad-purple) 12%, white);
+}
+
+/* Accent words inside headings */
 @utility marker {
   background-image: var(--rainbow-x);
-  color: var(--ink);
-  border-radius: 8px;
-  padding: 0 0.14em 0.06em;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
-
 
 /* ---------- Wordmark ---------- */
 
 .wordmark {
-  position: relative;
-  isolation: isolate;
   display: inline-block;
   font-family: var(--font-display);
   font-weight: 800;
@@ -230,51 +275,19 @@
   -webkit-text-fill-color: transparent;
 }
 
-.wordmark::before {
-  content: attr(data-text);
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  color: var(--ink);
-  -webkit-text-fill-color: var(--ink);
-  -webkit-text-stroke: 0.11em var(--ink);
-  paint-order: stroke fill;
-}
-
-/* ---------- Mascot / logo motion ---------- */
+/* ---------- Logo motion ---------- */
 
 @utility mascot-idle {
-  animation: papurro-wiggle 3s ease-in-out infinite;
-  transform-origin: 50% 85%;
-
-  & .mascot-lid {
-    animation: papurro-blink 5s steps(1, end) infinite;
-    stroke-dasharray: 40;
-    stroke-dashoffset: 40;
-  }
+  animation: papurro-float 5s ease-in-out infinite;
 }
 
-@keyframes papurro-wiggle {
+@keyframes papurro-float {
   0%,
   100% {
-    transform: rotate(-2deg);
+    transform: translateY(-4px) rotate(-1.5deg);
   }
   50% {
-    transform: rotate(2deg);
-  }
-}
-
-@keyframes papurro-blink {
-  0%,
-  94% {
-    stroke-dashoffset: 40;
-  }
-  96%,
-  99% {
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dashoffset: 40;
+    transform: translateY(6px) rotate(1.5deg);
   }
 }
 
@@ -283,8 +296,7 @@
     scroll-behavior: auto;
   }
 
-  .mascot-idle,
-  .mascot-idle .mascot-lid {
+  .mascot-idle {
     animation: none !important;
   }
 }
