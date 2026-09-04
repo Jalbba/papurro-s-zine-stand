@@ -10,9 +10,15 @@ import {
   Squiggle,
 } from "@/components/Doodles";
 import { Page } from "@/components/Layout";
-import { CtaFinal, GrillaPaises, Preguntas, ResumenRapido } from "@/components/sections";
+import {
+  CtaFinal,
+  Diagnostico,
+  GrillaPaises,
+  Preguntas,
+  ResumenRapido,
+} from "@/components/sections";
 import { FAQ_HOME } from "@/content/home";
-import { MAILTO, MAILTO_LONG, PAISES, SERVICIOS } from "@/site";
+import { DIAGNOSTICO, MAILTO, PAISES, SERVICIOS } from "@/site";
 
 const ICONOS = {
   automatizacion: DoodleGear,
@@ -31,17 +37,19 @@ const TINTES = {
 const pasos = [
   {
     n: "01",
-    titulo: "me escribís",
+    titulo: "pedís el diagnóstico",
     Icon: DoodleMail,
     color: "var(--grad-teal)",
-    texto: "Un mail contando qué te vuelve loco de tu operación. Sin formalidades.",
+    texto:
+      "Llenás el formulario o me mandás un WhatsApp contando qué te vuelve loco. Sin formalidades.",
   },
   {
     n: "02",
     titulo: "miro tu setup",
     Icon: DoodleChat,
     color: "var(--grad-yellow)",
-    texto: "Charlamos, reviso cómo laburás hoy y te digo qué se puede arreglar (y qué no).",
+    texto:
+      "Veinte minutos de llamada: reviso cómo laburás hoy y te digo qué se puede arreglar (y qué no).",
   },
   {
     n: "03",
@@ -65,7 +73,7 @@ export default function Home() {
   const pais = PAISES[paisIdx]!;
 
   return (
-    <Page>
+    <Page ctaHref="#diagnostico">
       {/* Hero */}
       <section className="panel wash px-5 py-10 sm:px-10 sm:py-16" aria-labelledby="hero-title">
         <div className="grid items-center gap-8 md:grid-cols-[1.1fr_0.9fr]">
@@ -89,9 +97,13 @@ export default function Home() {
               Argentina y Chile. No soy una agencia. Soy Papurro.
             </p>
 
-            <a href={MAILTO_LONG} className="btn-press btn-ink mt-7 px-6 py-4 text-lg sm:text-xl">
-              organicemos una call →
+            <a href="#diagnostico" className="btn-press btn-ink mt-7 px-6 py-4 text-lg sm:text-xl">
+              diagnóstico gratis de {DIAGNOSTICO.minutos} min →
             </a>
+
+            <p className="mt-3 text-xs font-semibold text-ink-soft">
+              Sin compromiso. Contesto yo, no un bot.
+            </p>
           </div>
 
           <div className="mx-auto w-[15rem] sm:w-[21rem]">
@@ -239,6 +251,8 @@ export default function Home() {
           Contesto en 24-48hs hábiles. Soy uno solo, tené paciencia 🐶
         </p>
       </section>
+
+      <Diagnostico />
 
       <Preguntas faqs={FAQ_HOME} />
 

@@ -76,6 +76,10 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
     ],
     faqs: [
       {
+        q: "¿Qué es el diagnóstico de 20 minutos?",
+        a: "Una llamada corta, gratis y sin compromiso. Me contás cómo funciona hoy tu tienda en Uruguay, miro dónde se te va el tiempo y te digo qué automatizaría primero. Si de ahí sale un proyecto se cotiza, y si no, te quedás igual con la lista de qué conviene arreglar. Lo pedís por el formulario de esta página o por WhatsApp al +598 92 061 005.",
+      },
+      {
         q: "¿Trabajás con tiendas Shopify uruguayas?",
         a: "Sí. Papurro está en Uruguay y trabaja con tiendas Shopify que operan acá, en español y en horario uruguayo. También atiende tiendas de Argentina y Chile, en remoto.",
       },
@@ -146,6 +150,10 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
     ],
     faqs: [
       {
+        q: "¿Qué es el diagnóstico de 20 minutos?",
+        a: "Una llamada corta, gratis y sin compromiso. Me contás cómo funciona hoy tu tienda en Argentina, miro dónde se te va el tiempo y te digo qué automatizaría primero. Si de ahí sale un proyecto se cotiza, y si no, te quedás igual con la lista de qué conviene arreglar. Lo pedís por el formulario de esta página o por WhatsApp al +598 92 061 005.",
+      },
+      {
         q: "¿Trabajás con tiendas Shopify de Argentina?",
         a: "Sí, en remoto y en español. Papurro está en Uruguay y trabaja con tiendas Shopify de Argentina, Chile y Uruguay. Todo se coordina por mail y videollamada.",
       },
@@ -215,6 +223,10 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
       "Reporte semanal de ventas y quiebres de stock, en tu correo.",
     ],
     faqs: [
+      {
+        q: "¿Qué es el diagnóstico de 20 minutos?",
+        a: "Una llamada corta, gratis y sin compromiso. Me contás cómo funciona hoy tu tienda en Chile, miro dónde se te va el tiempo y te digo qué automatizaría primero. Si de ahí sale un proyecto se cotiza, y si no, te quedás igual con la lista de qué conviene arreglar. Lo pedís por el formulario de esta página o por WhatsApp al +598 92 061 005.",
+      },
       {
         q: "¿Trabajas con tiendas Shopify de Chile?",
         a: "Sí, en remoto y en español. Papurro está en Uruguay y trabaja con tiendas Shopify de Chile, Argentina y Uruguay. Todo se coordina por correo y videollamada.",

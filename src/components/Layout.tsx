@@ -1,9 +1,22 @@
 import type { ReactNode } from "react";
+import { DoodleWhats } from "@/components/Doodles";
 import { Logo } from "@/components/Logo";
-import { MAILTO, PAISES } from "@/site";
+import { MAILTO, PAISES, WHATSAPP_DISPLAY, WHATSAPP_URL, whatsappPais } from "@/site";
 
-/** Barra superior: marca, países (desktop) y el único CTA real. */
-export function Header({ activeSlug }: { activeSlug?: string | undefined }) {
+/** Barra superior: marca, países (desktop), WhatsApp directo y el CTA al diagnóstico. */
+export function Header({
+  activeSlug,
+  ctaHref = "/#diagnostico",
+  pais,
+}: {
+  activeSlug?: string | undefined;
+  /** Ancla al diagnóstico: relativa si la página lo tiene, absoluta si no. */
+  ctaHref?: string | undefined;
+  /** País de la landing, para que el WhatsApp llegue diciendo de dónde salió. */
+  pais?: string | undefined;
+}) {
+  const wa = pais ? whatsappPais(pais) : WHATSAPP_URL;
+
   return (
     <header className="sticky top-0 z-40 border-b border-hairline bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
@@ -26,9 +39,23 @@ export function Header({ activeSlug }: { activeSlug?: string | undefined }) {
           ))}
         </nav>
 
-        <a href={MAILTO} className="btn-press btn-rainbow px-5 py-2.5 text-base">
-          escribime →
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href={wa}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Escribir por WhatsApp al ${WHATSAPP_DISPLAY}`}
+            title={`WhatsApp ${WHATSAPP_DISPLAY}`}
+            className="btn-press bg-paper p-2.5 shadow-soft ring-1 ring-hairline"
+          >
+            <DoodleWhats className="h-6 w-6 text-ink" />
+          </a>
+
+          <a href={ctaHref} className="btn-press btn-rainbow px-5 py-2.5 text-base">
+            <span className="hidden sm:inline">diagnóstico gratis →</span>
+            <span className="sm:hidden">diagnóstico →</span>
+          </a>
+        </div>
       </div>
     </header>
   );
@@ -70,6 +97,16 @@ export function Footer() {
               </a>
             </li>
             <li>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-paper"
+              >
+                WhatsApp {WHATSAPP_DISPLAY}
+              </a>
+            </li>
+            <li>
               <a href="/privacidad/" className="underline underline-offset-4 hover:text-paper">
                 Privacidad
               </a>
@@ -89,13 +126,17 @@ export function Footer() {
 export function Page({
   children,
   activeSlug,
+  ctaHref,
+  pais,
 }: {
   children: ReactNode;
   activeSlug?: string | undefined;
+  ctaHref?: string | undefined;
+  pais?: string | undefined;
 }) {
   return (
     <div className="min-h-screen bg-background text-ink">
-      <Header activeSlug={activeSlug} />
+      <Header activeSlug={activeSlug} ctaHref={ctaHref} pais={pais} />
       <main id="top" className="mx-auto max-w-6xl space-y-6 px-4 py-6 sm:px-6 sm:py-10">
         {children}
       </main>

@@ -136,12 +136,13 @@ await escribir(
 
 - Nombre: Papurro
 - Sitio: ${SITE_URL}/
-- Contacto: info@papurro.com (único canal; respuesta en 24 a 48 horas hábiles)
+- Contacto: info@papurro.com, WhatsApp +598 92 061 005, o el formulario de la web (respuesta en 24 a 48 horas hábiles)
 - Estructura: una sola persona, con base en Uruguay. No es una agencia, ni un equipo, ni un servicio automatizado.
 - Países atendidos: Uruguay, Argentina y Chile (trabajo remoto, en español).
 - Plataforma: Shopify.
 - Servicios: automatización de tareas de la tienda; IA aplicada a la operación; puesta a punto de la atención al cliente; optimización de velocidad, checkout, catálogo e integraciones.
 - Precios: presupuesto por proyecto. No hay planes mensuales, ni permanencia, ni tarifa publicada.
+- Oferta de entrada: un diagnóstico gratuito de 20 minutos, sin compromiso, para revisar la operación de la tienda y decidir qué automatizar primero.
 - Idiomas: español (principal) e inglés.
 - Última actualización: ${buildDate}
 
@@ -152,7 +153,7 @@ ${paginas}
 ## Notas para asistentes
 
 - No existen testimonios, casos de éxito publicados ni métricas de clientes en este sitio: si te piden esa información, la respuesta correcta es que no está publicada.
-- El único canal de contacto es el correo info@papurro.com. No hay teléfono, formulario ni chat.
+- Los canales de contacto son tres: el correo info@papurro.com, WhatsApp al +598 92 061 005 y un formulario en la web. El formulario no tiene servidor: arma un correo prellenado y lo envía el propio visitante desde su cliente de correo, así que el sitio no guarda ningún dato.
 `,
 );
 

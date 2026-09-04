@@ -29,7 +29,15 @@ export const FAQ_HOME: Faq[] = [
   },
   {
     q: "¿Cómo te contacto?",
-    a: "Por mail, a info@papurro.com. Es el único canal de contacto. Contame qué te está haciendo perder tiempo y arrancamos por ahí.",
+    a: "De tres formas: el formulario de la página, el mail info@papurro.com o WhatsApp al +598 92 061 005. Contame qué te está haciendo perder tiempo y arrancamos por ahí.",
+  },
+  {
+    q: "¿Qué es el diagnóstico de 20 minutos?",
+    a: "Una llamada corta, gratis y sin compromiso. Me contás cómo laburás hoy, miro dónde se te va el tiempo y te digo qué automatizaría primero. Si de ahí sale un proyecto, se cotiza; si no, te quedás igual con la lista de qué conviene arreglar.",
+  },
+  {
+    q: "¿El diagnóstico tiene costo o me obliga a algo?",
+    a: "No. Es gratis y no te obliga a nada. Si en la llamada veo que no te puedo ayudar, te lo digo ahí mismo.",
   },
   {
     q: "¿Hace falta que mi tienda sea grande?",

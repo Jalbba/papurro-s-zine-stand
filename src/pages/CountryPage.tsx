@@ -4,12 +4,13 @@ import { Page } from "@/components/Layout";
 import {
   Breadcrumbs,
   CtaFinal,
+  Diagnostico,
   GrillaPaises,
   Preguntas,
   ResumenRapido,
 } from "@/components/sections";
 import type { PaisContenido } from "@/content/countries";
-import { SERVICIOS, mailtoPais } from "@/site";
+import { DIAGNOSTICO, SERVICIOS, mailtoPais } from "@/site";
 
 const ICONOS = {
   automatizacion: DoodleGear,
@@ -22,7 +23,7 @@ export default function CountryPage({ pais }: { pais: PaisContenido }) {
   const mailto = mailtoPais(pais.nombre);
 
   return (
-    <Page activeSlug={pais.slug}>
+    <Page activeSlug={pais.slug} ctaHref="#diagnostico" pais={pais.nombre}>
       {/* Hero */}
       <section className="panel wash px-5 py-10 sm:px-10 sm:py-16" aria-labelledby="hero-title">
         <Breadcrumbs
@@ -50,9 +51,13 @@ export default function CountryPage({ pais }: { pais: PaisContenido }) {
               {pais.gentilicio}. Una persona, no una agencia.
             </p>
 
-            <a href={mailto} className="btn-press btn-ink mt-7 px-6 py-4 text-lg sm:text-xl">
-              contame tu caso →
+            <a href="#diagnostico" className="btn-press btn-ink mt-7 px-6 py-4 text-lg sm:text-xl">
+              diagnóstico gratis de {DIAGNOSTICO.minutos} min →
             </a>
+
+            <p className="mt-3 text-xs font-semibold text-ink-soft">
+              Sin compromiso. Contesto yo, no un bot.
+            </p>
           </div>
 
           <div className="mx-auto w-[12rem] sm:w-[17rem]">
@@ -145,6 +150,8 @@ export default function CountryPage({ pais }: { pais: PaisContenido }) {
         </ul>
       </section>
 
+      <Diagnostico pais={pais.nombre} />
+
       <Preguntas
         faqs={pais.faqs}
         titulo="preguntas frecuentes de"
@@ -153,7 +160,7 @@ export default function CountryPage({ pais }: { pais: PaisContenido }) {
 
       <GrillaPaises excluir={pais.slug} />
 
-      <CtaFinal href={mailto} />
+      <CtaFinal href={mailto} pais={pais.nombre} />
     </Page>
   );
 }

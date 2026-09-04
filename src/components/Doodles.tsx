@@ -85,3 +85,14 @@ export function DoodleClock({ className }: DoodleProps) {
     </svg>
   );
 }
+
+/** Burbuja de chat con tubo de teléfono: WhatsApp, dibujado a mano como el
+ *  resto (no el glifo de marca, que desentonaría con los otros doodles). */
+export function DoodleWhats({ className }: DoodleProps) {
+  return (
+    <svg viewBox="0 0 64 64" className={className} aria-hidden="true" {...base}>
+      <path d="M32 10c12 0 22 8.5 22 19s-10 19-22 19c-2.6 0-5.1-.4-7.4-1.1L12 51l3.6-9.3C12.1 38.3 10 34 10 29c0-10.5 10-19 22-19Z" />
+      <path d="M25 24c1.5 5 5 8.5 10 10l3-3 5 3.5-2.5 4c-6.5.5-14.5-6.5-15.5-13l4-1.5Z" />
+    </svg>
+  );
+}

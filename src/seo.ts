@@ -7,7 +7,16 @@
  * servidos en el HTML inicial.
  */
 
-import { EMAIL, ONE_LINER, PAISES, RESPONSE_TIME, SITE_NAME, SITE_URL } from "./site";
+import {
+  DIAGNOSTICO,
+  EMAIL,
+  ONE_LINER,
+  PAISES,
+  RESPONSE_TIME,
+  SITE_NAME,
+  SITE_URL,
+  WHATSAPP_E164,
+} from "./site";
 
 export type Faq = { q: string; a: string };
 
@@ -56,6 +65,7 @@ export function professionalServiceLd(): Record<string, unknown> {
     alternateName: "Papurro · Shopify",
     url: `${SITE_URL}/`,
     email: EMAIL,
+    telephone: WHATSAPP_E164,
     description: ONE_LINER,
     image: OG_IMAGE,
     logo: `${SITE_URL}/favicon.png`,
@@ -69,13 +79,23 @@ export function professionalServiceLd(): Record<string, unknown> {
       { "@type": "Language", name: "Español", alternateName: "es" },
       { "@type": "Language", name: "Inglés", alternateName: "en" },
     ],
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "sales",
-      email: EMAIL,
-      availableLanguage: ["es", "en"],
-      areaServed: PAISES.map((p) => p.iso),
-    },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        email: EMAIL,
+        availableLanguage: ["es", "en"],
+        areaServed: PAISES.map((p) => p.iso),
+      },
+      {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        telephone: WHATSAPP_E164,
+        name: "WhatsApp",
+        availableLanguage: ["es", "en"],
+        areaServed: PAISES.map((p) => p.iso),
+      },
+    ],
     knowsAbout: [
       "Shopify",
       "Automatización de e-commerce",
@@ -85,18 +105,34 @@ export function professionalServiceLd(): Record<string, unknown> {
       "Integraciones de e-commerce",
     ],
     makesOffer: [
-      "Automatización de tareas de la tienda",
-      "IA aplicada a la operación",
-      "Puesta a punto de atención al cliente",
-      "Optimización de velocidad, checkout y catálogo",
-    ].map((n) => ({
-      "@type": "Offer",
-      itemOffered: { "@type": "Service", name: n, provider: { "@id": ORG_ID } },
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        description: "Presupuesto por proyecto, sin planes mensuales ni permanencia.",
+      {
+        "@type": "Offer",
+        name: DIAGNOSTICO.nombre,
+        description: DIAGNOSTICO.resumen,
+        price: 0,
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+        itemOffered: {
+          "@type": "Service",
+          name: DIAGNOSTICO.nombre,
+          description: DIAGNOSTICO.resumen,
+          provider: { "@id": ORG_ID },
+        },
       },
-    })),
+      ...[
+        "Automatización de tareas de la tienda",
+        "IA aplicada a la operación",
+        "Puesta a punto de atención al cliente",
+        "Optimización de velocidad, checkout y catálogo",
+      ].map((n) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: n, provider: { "@id": ORG_ID } },
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          description: "Presupuesto por proyecto, sin planes mensuales ni permanencia.",
+        },
+      })),
+    ],
   };
 }
 
@@ -109,6 +145,7 @@ export function personLd(): Record<string, unknown> {
       "La persona detrás de Papurro. Trabaja con pocas tiendas Shopify a la vez y contesta " +
       `los mails en ${RESPONSE_TIME}.`,
     email: EMAIL,
+    telephone: WHATSAPP_E164,
     url: `${SITE_URL}/`,
     worksFor: { "@id": ORG_ID },
     knowsLanguage: ["es", "en"],

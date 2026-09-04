@@ -1,6 +1,6 @@
 import { Page } from "@/components/Layout";
 import { Breadcrumbs } from "@/components/sections";
-import { EMAIL, MAILTO } from "@/site";
+import { EMAIL, MAILTO, WHATSAPP_DISPLAY, WHATSAPP_URL } from "@/site";
 
 /** Página simple y honesta: qué datos toca este sitio (spoiler: casi ninguno).
  *  Sirve para transparencia y para las políticas de las plataformas de ads. */
@@ -24,9 +24,18 @@ export default function Privacidad() {
             <h2 className="text-2xl">quién soy</h2>
             <p className="mt-2">
               Papurro es una persona física que trabaja desde Uruguay ayudando a tiendas Shopify de
-              Uruguay, Argentina y Chile. El único canal de contacto es{" "}
+              Uruguay, Argentina y Chile. Los canales de contacto son{" "}
               <a href={MAILTO} className="underline underline-offset-4">
                 {EMAIL}
+              </a>{" "}
+              y WhatsApp al{" "}
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4"
+              >
+                {WHATSAPP_DISPLAY}
               </a>
               .
             </p>
@@ -35,18 +44,25 @@ export default function Privacidad() {
           <div>
             <h2 className="text-2xl">qué datos toma este sitio</h2>
             <p className="mt-2">
-              Este sitio es una página estática: no tiene formularios, no pide registro y no guarda
-              datos tuyos en ningún lado. Los enlaces de contacto abren tu programa de correo; nada
-              se envía desde acá.
+              Este sitio es una página estática: no pide registro, no usa cookies y no guarda datos
+              tuyos en ningún lado. Tampoco hay servidor atrás.
+            </p>
+            <p className="mt-2">
+              El formulario de contacto no envía nada por su cuenta: con lo que escribís arma un
+              correo ya redactado y abre tu propio programa de mail para que lo revises y lo mandes
+              vos. Mientras no le des enviar, esa información no sale de tu dispositivo. Si preferís
+              WhatsApp, el botón abre una conversación con el número de arriba y aplica la política
+              de privacidad de WhatsApp.
             </p>
           </div>
 
           <div>
             <h2 className="text-2xl">qué pasa si me escribís</h2>
             <p className="mt-2">
-              Tu mail queda en mi casilla de correo, como cualquier otro. Lo uso únicamente para
-              responderte y, si trabajamos juntos, para llevar adelante el proyecto. No vendo ni
-              cedo esa información a nadie, y no la uso para mandarte publicidad.
+              Tu mensaje —por correo o por WhatsApp— queda en mi casilla o en mi teléfono, como
+              cualquier otro. Lo uso únicamente para responderte y, si trabajamos juntos, para
+              llevar adelante el proyecto. No vendo ni cedo esa información a nadie, y no la uso
+              para mandarte publicidad.
             </p>
           </div>
 

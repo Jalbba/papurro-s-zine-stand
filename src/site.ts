@@ -26,6 +26,78 @@ export const ONE_LINER =
 
 export const RESPONSE_TIME = "24 a 48 horas hábiles";
 
+/* ---------------- WhatsApp ---------------- */
+
+/** Número real, en tres formatos: para mostrar, para wa.me (sólo dígitos)
+ *  y en E.164 para el JSON-LD. */
+export const WHATSAPP_DISPLAY = "+598 92 061 005";
+export const WHATSAPP_DIGITS = "59892061005";
+export const WHATSAPP_E164 = "+59892061005";
+
+function waLink(texto: string) {
+  return `https://wa.me/${WHATSAPP_DIGITS}?text=${encodeURIComponent(texto)}`;
+}
+
+export const WHATSAPP_URL = waLink(
+  "Hola Papurro! Tengo una tienda Shopify y quiero el diagnóstico de 20 minutos.",
+);
+
+/** WhatsApp con el país ya escrito, para saber de dónde llegó la consulta. */
+export function whatsappPais(pais: string) {
+  return waLink(
+    `Hola Papurro! Tengo una tienda Shopify en ${pais} y quiero el diagnóstico de 20 minutos.`,
+  );
+}
+
+/* ---------------- Oferta de entrada ---------------- */
+
+/** El diagnóstico es la puerta de entrada: corto, gratis y sin compromiso.
+ *  Si cambia acá, cambia en el copy, en el JSON-LD y en llms.txt. */
+export const DIAGNOSTICO = {
+  minutos: 20,
+  nombre: "Diagnóstico de 20 minutos",
+  resumen:
+    "Una llamada de 20 minutos, gratis y sin compromiso: me contás cómo laburás hoy y te digo " +
+    "qué automatizaría primero. Salga o no un proyecto de ahí, te quedás con la lista.",
+} as const;
+
+/* ---------------- Formulario ---------------- */
+
+export type Consulta = {
+  nombre: string;
+  tienda: string;
+  mensaje: string;
+  /** País de la landing desde la que se envía, si es una página por país. */
+  pais?: string | undefined;
+};
+
+/** El formulario no tiene backend: arma un mailto con todo ya escrito y deja
+ *  que el cliente de correo del visitante lo mande. */
+export function mailtoConsulta({ nombre, tienda, mensaje, pais }: Consulta) {
+  const quien = nombre.trim() || "una tienda Shopify";
+  const asunto = pais
+    ? `Diagnóstico de 20 min (${pais}) — ${quien}`
+    : `Diagnóstico de 20 min — ${quien}`;
+
+  const cuerpo = [
+    "Hola Papurro!",
+    "",
+    `Nombre: ${nombre.trim()}`,
+    `Tienda: ${tienda.trim()}`,
+    pais ? `País: ${pais}` : null,
+    "",
+    "Qué me está haciendo perder tiempo:",
+    mensaje.trim(),
+    "",
+    "—",
+    "Enviado desde el formulario de papurro.com",
+  ]
+    .filter((linea) => linea !== null)
+    .join("\n");
+
+  return `mailto:${EMAIL}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+}
+
 export const PRICING_MODEL =
   "Presupuesto por proyecto, sin planes mensuales ni permanencia: mirás tu caso, se cotiza y se hace.";
 
