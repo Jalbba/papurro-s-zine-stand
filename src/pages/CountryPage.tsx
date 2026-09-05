@@ -1,5 +1,6 @@
 import { PMark } from "@/components/Logo";
 import { DoodleChat, DoodleGear, DoodleSpark, DoodleSpeed, Squiggle } from "@/components/Doodles";
+import { GlFondo } from "@/components/GlFondo";
 import { Page } from "@/components/Layout";
 import {
   Breadcrumbs,
@@ -25,15 +26,22 @@ export default function CountryPage({ pais }: { pais: PaisContenido }) {
   return (
     <Page activeSlug={pais.slug} ctaHref="#diagnostico" pais={pais.nombre}>
       {/* Hero */}
-      <section className="panel wash px-5 py-10 sm:px-10 sm:py-16" aria-labelledby="hero-title">
-        <Breadcrumbs
-          items={[
-            { name: "Papurro", href: "/" },
-            { name: pais.nombre, href: `/${pais.slug}/` },
-          ]}
-        />
+      <section
+        className="panel wash relative px-5 py-10 sm:px-10 sm:py-16"
+        aria-labelledby="hero-title"
+      >
+        <GlFondo preset="hero" />
 
-        <div className="mt-6 grid items-center gap-8 md:grid-cols-[1.1fr_0.9fr]">
+        <div className="relative">
+          <Breadcrumbs
+            items={[
+              { name: "Papurro", href: "/" },
+              { name: pais.nombre, href: `/${pais.slug}/` },
+            ]}
+          />
+        </div>
+
+        <div className="relative mt-6 grid items-center gap-8 md:grid-cols-[1.1fr_0.9fr]">
           <div>
             <p className="pill px-3 py-1.5 text-xs sm:text-sm">
               Tiendas Shopify en {pais.nombre} {pais.bandera}

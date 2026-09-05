@@ -8,6 +8,7 @@ import {
   Squiggle,
 } from "@/components/Doodles";
 import { Formulario } from "@/components/Formulario";
+import { GlFondo } from "@/components/GlFondo";
 import type { Faq } from "@/seo";
 import {
   DIAGNOSTICO,
@@ -221,53 +222,60 @@ export function CtaFinal({
 
   return (
     <section
-      className="panel wash px-5 py-12 text-center sm:px-10 sm:py-16"
+      className="panel wash relative px-5 py-12 text-center sm:px-10 sm:py-16"
       aria-labelledby="cta-title"
     >
-      <h2 id="cta-title" className="text-4xl sm:text-6xl">
-        {titulo ?? "¿arrancamos"}
-        <span className="marker">?</span>
-      </h2>
+      <GlFondo preset="cta" />
 
-      <p className="mx-auto mt-5 max-w-md text-base font-semibold text-ink sm:text-lg">
-        Pedime el diagnóstico de {DIAGNOSTICO.minutos} minutos, escribime a {EMAIL} o mandame un
-        WhatsApp. Contesto yo, en 24 a 48 horas hábiles.
-      </p>
+      <div className="relative">
+        <h2 id="cta-title" className="text-4xl sm:text-6xl">
+          {titulo ?? "¿arrancamos"}
+          <span className="marker">?</span>
+        </h2>
 
-      <a href="#diagnostico" className="btn-press btn-rainbow mt-7 px-6 py-4 text-lg sm:text-xl">
-        quiero el diagnóstico gratis →
-      </a>
+        <p className="mx-auto mt-5 max-w-md text-base font-semibold text-ink sm:text-lg">
+          Pedime el diagnóstico de {DIAGNOSTICO.minutos} minutos, escribime a {EMAIL} o mandame un
+          WhatsApp. Contesto yo, en 24 a 48 horas hábiles.
+        </p>
 
-      <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <a href={href} className="btn-press btn-ink w-full px-6 py-5 text-lg sm:w-auto sm:text-2xl">
-          <DoodleMail className="h-7 w-7" />
-          {EMAIL}
+        <a href="#diagnostico" className="btn-press btn-rainbow mt-7 px-6 py-4 text-lg sm:text-xl">
+          quiero el diagnóstico gratis →
         </a>
 
-        <a
-          href={wa}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-press w-full bg-paper px-6 py-5 text-lg shadow-soft ring-1 ring-hairline sm:w-auto sm:text-2xl"
-        >
-          <DoodleWhats className="h-7 w-7" />
-          {WHATSAPP_DISPLAY}
-        </a>
-      </div>
+        <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <a
+            href={href}
+            className="btn-press btn-ink w-full px-6 py-5 text-lg sm:w-auto sm:text-2xl"
+          >
+            <DoodleMail className="h-7 w-7" />
+            {EMAIL}
+          </a>
 
-      <div className="mt-6 flex items-center justify-center gap-3">
-        <button
-          type="button"
-          onClick={copiar}
-          className="btn-press bg-paper px-5 py-2.5 text-sm shadow-soft"
-        >
-          copiar el mail
-        </button>
-        {copiado && (
-          <span role="status" className="pill-grad px-3 py-2 font-display text-sm">
-            ¡copiado!
-          </span>
-        )}
+          <a
+            href={wa}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-press w-full bg-paper px-6 py-5 text-lg shadow-soft ring-1 ring-hairline sm:w-auto sm:text-2xl"
+          >
+            <DoodleWhats className="h-7 w-7" />
+            {WHATSAPP_DISPLAY}
+          </a>
+        </div>
+
+        <div className="mt-6 flex items-center justify-center gap-3">
+          <button
+            type="button"
+            onClick={copiar}
+            className="btn-press bg-paper px-5 py-2.5 text-sm shadow-soft"
+          >
+            copiar el mail
+          </button>
+          {copiado && (
+            <span role="status" className="pill-grad px-3 py-2 font-display text-sm">
+              ¡copiado!
+            </span>
+          )}
+        </div>
       </div>
     </section>
   );

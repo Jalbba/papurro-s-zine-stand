@@ -121,7 +121,22 @@ Small line: "Contesto en 24-48hs hábiles. Soy uno solo, tené paciencia 🐶"
 - Semantic HTML, real `<section>`s, accessible contrast (ink on all those brights), `alt`/`aria-label` on the SVGs.
 - SEO/GEO: see the dedicated section below — the site is prerendered to static HTML per route, with per-country pages, JSON-LD, hreflang, sitemap and `llms.txt`.
 - Smooth scroll to sections from the top bar.
-- Fast: no heavy libs, no image assets, everything inline SVG + CSS.
+- Fast: no heavy libs on the critical path, no image assets beyond the P mark, everything else
+  inline SVG + CSS.
+- **WebGL background (`src/components/GlFondo.tsx` + `src/components/gl/escena.ts`)**: Three.js
+  floats a handful of translucent spheres, facetted gems and rings — in the six palette colors — behind
+  the `wash` panels of the hero and the closing CTA. It is decoration, and it stays out of the way:
+  - Three is a **dynamic import**, so it lands in its own chunk (~123 kB gzip) that the initial page
+    load never touches. The prerendered HTML ships an empty `<canvas>`; the CSS `wash` is what the
+    visitor sees first, and it stays visible underneath.
+  - The chunk is fetched only when the panel is about to enter the viewport _and_ the browser is
+    idle. With `prefers-reduced-motion`, Save-Data, or no WebGL, it is never fetched at all and the
+    page is exactly what it was before.
+  - The render loop stops when the panel scrolls away or the tab is hidden; DPR is capped and
+    mobile gets fewer, smaller shapes.
+  - Colors are read from the CSS custom properties, so `styles.css` stays the single source of truth.
+    If you touch this, keep those four properties — the point is motion that costs nothing until it's
+    on screen.
 
 Make it feel like a photocopied zine someone taped to a wall — loud, warm, human, and clearly made by a person with a sense of humor.
 
