@@ -56,7 +56,7 @@ const ORG_ID = `${SITE_URL}/#papurro`;
 const PERSON_ID = `${SITE_URL}/#persona`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
 
-/** El negocio: una persona que atiende Uruguay, Argentina y Chile, en remoto. */
+/** El negocio: una persona que atiende Uruguay, Argentina y Estados Unidos, en remoto. */
 export function professionalServiceLd(): Record<string, unknown> {
   return {
     "@type": "ProfessionalService",
@@ -76,7 +76,7 @@ export function professionalServiceLd(): Record<string, unknown> {
     address: { "@type": "PostalAddress", addressCountry: "UY" },
     areaServed: PAISES.map((p) => ({ "@type": "Country", name: p.nombre, identifier: p.iso })),
     availableLanguage: [
-      { "@type": "Language", name: "Español", alternateName: "es" },
+      { "@type": "Language", name: "Castellano", alternateName: "es" },
       { "@type": "Language", name: "Inglés", alternateName: "en" },
     ],
     contactPoint: [
@@ -272,8 +272,8 @@ export function renderHead(head: HeadData, buildDate: string) {
     `<meta property="og:description" content="${description}" />`,
     `<meta property="og:url" content="${url}" />`,
     `<meta property="og:locale" content="${head.ogLocale}" />`,
-    ...PAISES.filter((p) => `es_${p.iso}` !== head.ogLocale).map(
-      (p) => `<meta property="og:locale:alternate" content="es_${p.iso}" />`,
+    ...PAISES.filter((p) => p.ogLocale !== head.ogLocale).map(
+      (p) => `<meta property="og:locale:alternate" content="${p.ogLocale}" />`,
     ),
     `<meta property="og:image" content="${OG_IMAGE}" />`,
     `<meta property="og:image:width" content="1200" />`,

@@ -19,7 +19,7 @@ import {
   ResumenRapido,
 } from "@/components/sections";
 import { FAQ_HOME } from "@/content/home";
-import { DIAGNOSTICO, MAILTO, PAISES, SERVICIOS } from "@/site";
+import { DIAGNOSTICO, MAILTO, PAISES, SERVICIOS, nombrePais } from "@/site";
 
 const ICONOS = {
   automatizacion: DoodleGear,
@@ -87,7 +87,7 @@ export default function Home() {
             <p className="pill px-3 py-1.5 text-xs sm:text-sm">
               Para tiendas de e-commerce en{" "}
               <span aria-live="polite">
-                {pais.nombre} {pais.bandera}
+                {nombrePais(pais, "es")} {pais.bandera}
               </span>
             </p>
 
@@ -100,7 +100,7 @@ export default function Home() {
 
             <p className="mt-5 max-w-md text-base font-semibold sm:text-lg">
               Automatización, IA aplicada y atención al cliente para tiendas de e-commerce de
-              Uruguay, Argentina y Chile. No soy una agencia. Soy Papurro.
+              Uruguay, Argentina y Estados Unidos. No soy una agencia. Soy Papurro.
             </p>
 
             <a href="#diagnostico" className="btn-press btn-ink mt-7 px-6 py-4 text-lg sm:text-xl">
@@ -130,8 +130,8 @@ export default function Home() {
         <div className="mt-5">
           <ResumenRapido>
             Papurro es una persona —no una agencia ni un bot— que ayuda a tiendas de e-commerce de
-            Uruguay, Argentina y Chile con automatización, IA aplicada, atención al cliente y
-            optimización. Presupuesto por proyecto, sin planes mensuales. Contacto:{" "}
+            Uruguay, Argentina y Estados Unidos con automatización, IA aplicada, atención al cliente
+            y optimización. Presupuesto por proyecto, sin planes mensuales. Contacto:{" "}
             <a href={MAILTO} className="underline underline-offset-4">
               info@papurro.com
             </a>

@@ -24,7 +24,7 @@ export default function Privacidad() {
             <h2 className="text-2xl">quién soy</h2>
             <p className="mt-2">
               Papurro es una persona física que trabaja desde Uruguay ayudando a tiendas de
-              e-commerce de Uruguay, Argentina y Chile. Los canales de contacto son{" "}
+              e-commerce de Uruguay, Argentina y Estados Unidos. Los canales de contacto son{" "}
               <a href={MAILTO} className="underline underline-offset-4">
                 {EMAIL}
               </a>{" "}

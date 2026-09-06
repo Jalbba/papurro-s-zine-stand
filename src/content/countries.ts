@@ -1,4 +1,5 @@
 import type { Faq } from "@/seo";
+import type { Idioma } from "@/site";
 
 export type Bloque = { titulo: string; texto: string };
 
@@ -11,6 +12,8 @@ export type PaisContenido = {
   hreflang: string;
   ogLocale: string;
   moneda: string;
+  /** Idioma en el que está escrito el copy de esta página. */
+  idioma: Idioma;
   /** <title> de la página. */
   title: string;
   /** meta description. */
@@ -37,6 +40,7 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
     hreflang: "es-UY",
     ogLocale: "es_UY",
     moneda: "UYU",
+    idioma: "es",
     title: "Automatización e-commerce en Uruguay · Papurro",
     description:
       "Ayudo a tiendas de e-commerce uruguayas con automatización, IA aplicada, atención al cliente y optimización. Una persona, no una agencia. Escribime a info@papurro.com.",
@@ -81,7 +85,7 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
       },
       {
         q: "¿Trabajás con tiendas de e-commerce uruguayas?",
-        a: "Sí. Papurro está en Uruguay y trabaja con tiendas de e-commerce que operan acá, en español y en horario uruguayo. También atiende tiendas de Argentina y Chile, en remoto.",
+        a: "Sí. Papurro está en Uruguay y trabaja con tiendas de e-commerce que operan acá, en castellano y en horario uruguayo. También atiende, en remoto, tiendas de Argentina (en castellano) y de Estados Unidos (en inglés).",
       },
       {
         q: "¿Qué se puede automatizar en una tienda de e-commerce en Uruguay?",
@@ -106,6 +110,7 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
     hreflang: "es-AR",
     ogLocale: "es_AR",
     moneda: "ARS",
+    idioma: "es",
     title: "Automatización e-commerce en Argentina · Papurro",
     description:
       "Automatización, IA aplicada, atención al cliente y optimización para tiendas de e-commerce en Argentina. Una persona, presupuesto por proyecto. info@papurro.com.",
@@ -155,7 +160,7 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
       },
       {
         q: "¿Trabajás con tiendas de e-commerce de Argentina?",
-        a: "Sí, en remoto y en español. Papurro está en Uruguay y trabaja con tiendas de e-commerce de Argentina, Chile y Uruguay. Todo se coordina por mail y videollamada.",
+        a: "Sí, en remoto y en castellano. Papurro está en Uruguay y trabaja con tiendas de e-commerce de Argentina y Uruguay en castellano, y de Estados Unidos en inglés. Todo se coordina por mail y videollamada.",
       },
       {
         q: "¿Se pueden automatizar las actualizaciones de precios en tu e-commerce?",
@@ -172,76 +177,77 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
     ],
   },
   {
-    slug: "chile",
-    nombre: "Chile",
-    gentilicio: "chilenas",
-    bandera: "🇨🇱",
-    iso: "CL",
-    hreflang: "es-CL",
-    ogLocale: "es_CL",
-    moneda: "CLP",
-    title: "Automatización e-commerce en Chile · Papurro",
+    slug: "usa",
+    nombre: "United States",
+    gentilicio: "American",
+    bandera: "🇺🇸",
+    iso: "US",
+    hreflang: "en-US",
+    ogLocale: "en_US",
+    moneda: "USD",
+    idioma: "en",
+    title: "E-commerce Automation in the United States · Papurro",
     description:
-      "Automatización, IA aplicada, atención al cliente y optimización para tiendas de e-commerce en Chile. Una persona, presupuesto por proyecto. info@papurro.com.",
-    h1: "automatización de e-commerce en",
-    h1Marker: "Chile",
+      "Automation, applied AI, customer support and optimization for e-commerce stores in the United States. One person, project-based pricing. info@papurro.com.",
+    h1: "e-commerce automation in the",
+    h1Marker: "United States",
     resumen:
-      "Papurro trabaja con tiendas de e-commerce que venden en Chile: automatiza tareas repetitivas, " +
-      "aplica IA donde realmente sirve, ordena la atención al cliente y optimiza la tienda. " +
-      "Es una sola persona, cotiza por proyecto y responde los correos en 24 a 48 horas hábiles.",
+      "Papurro works with e-commerce stores that sell in the United States: automating repetitive tasks, " +
+      "applying AI where it actually helps, cleaning up customer support and optimizing the store. " +
+      "It's one person, quotes by project, and replies to emails within 24 to 48 business hours.",
     intro: [
-      "Si tienes una tienda de e-commerce en Chile, el cuello de botella casi nunca es la tienda: es todo lo que pasa después de la compra. Pedidos que se copian a mano, despachos que se avisan uno por uno, consultas repartidas entre correo, Instagram y WhatsApp.",
-      "Trabajo remoto con tiendas chilenas para sacar ese trabajo manual del medio, partiendo por lo que más tiempo te quita hoy.",
+      "If you run an e-commerce store in the United States, the bottleneck is almost never the store itself: it's everything that happens after checkout. Orders copied by hand into a spreadsheet, shipping notices sent out one by one, questions scattered across email, Instagram and WhatsApp.",
+      "I work remotely with US stores to take that manual work out of the picture, starting with whatever is costing you the most time right now.",
     ],
     contexto: [
       {
-        titulo: "cobros y checkout",
+        titulo: "payments and checkout",
         texto:
-          "Webpay, Mercado Pago, transferencia: cada medio deja los datos en un formato distinto. Lo que se puede ordenar es lo que viene después del pago, para que conciliar no sea un trabajo aparte.",
+          "Stripe, Shopify Payments, PayPal: each one leaves the data in a different format. What can be cleaned up is everything that comes after the charge, so reconciling isn't a separate job in itself.",
       },
       {
-        titulo: "despachos a regiones",
+        titulo: "shipping and fulfillment",
         texto:
-          "Chilexpress, Starken, Correos de Chile o retiro en tienda: mientras alguien copie números de seguimiento a mano, se van a perder pedidos y se van a repetir las mismas preguntas. Ese flujo se automatiza completo.",
+          "UPS, USPS, FedEx, or a 3PL: as long as someone is copying tracking numbers by hand, orders will slip through and customers will keep asking the same question. That flow can be automated end to end.",
       },
       {
-        titulo: "documentos y administración",
+        titulo: "sales tax and back office",
         texto:
-          "La boleta o factura electrónica la emite tu sistema; lo que se puede ordenar es el puente: que los datos del pedido lleguen completos y sin retipear.",
+          "Sales tax across states is handled by your accountant or a tool like Avalara or TaxJar; what can be cleaned up is the bridge, so order data reaches it complete and without retyping anything.",
       },
       {
-        titulo: "temporadas que revientan la operación",
+        titulo: "peak seasons that break support, not the store",
         texto:
-          "CyberDay, Black Friday y Navidad no rompen la tienda: rompen la atención al cliente. Un soporte ordenado y respuestas preparadas antes de la fecha es la diferencia entre vender más y atender peor.",
+          "Black Friday, Cyber Monday and the holiday rush rarely take the store down: they take down customer support. Organized support and answers prepared ahead of time are the difference between selling more and serving customers worse.",
       },
     ],
     ejemplos: [
-      "Pedido pagado → alta automática en tu planilla o sistema de gestión.",
-      "Correo o mensaje de despacho automático, con el seguimiento del courier que corresponda.",
-      "Stock sincronizado entre tu e-commerce y tus otros canales de venta.",
-      "Respuestas listas para las preguntas de siempre: plazos de despacho a regiones, cambios, tallas.",
-      "Reporte semanal de ventas y quiebres de stock, en tu correo.",
+      "Paid order → automatic entry into your spreadsheet or order management system.",
+      "Automatic shipping notification, with the right carrier's tracking number attached.",
+      "Stock synced between your e-commerce store and your other sales channels.",
+      "Ready-to-send answers for the recurring questions: shipping times, returns, sizing.",
+      "Weekly report on sales and stockouts, delivered straight to your inbox.",
     ],
     faqs: [
       {
-        q: "¿Qué es el diagnóstico de 20 minutos?",
-        a: "Una llamada corta, gratis y sin compromiso. Me contás cómo funciona hoy tu tienda en Chile, miro dónde se te va el tiempo y te digo qué automatizaría primero. Si de ahí sale un proyecto se cotiza, y si no, te quedás igual con la lista de qué conviene arreglar. Lo pedís por el formulario de esta página o por WhatsApp al +598 92 061 005.",
+        q: "What is the 20-minute diagnostic?",
+        a: "A short, free, no-strings-attached call. You tell me how your US store runs today, I look at where your time is going, and I tell you what I'd automate first. If a project comes out of it, it gets quoted; if not, you keep the list of what's worth fixing. Book it through the form on this page or on WhatsApp at +598 92 061 005.",
       },
       {
-        q: "¿Trabajas con tiendas de e-commerce de Chile?",
-        a: "Sí, en remoto y en español. Papurro está en Uruguay y trabaja con tiendas de e-commerce de Chile, Argentina y Uruguay. Todo se coordina por correo y videollamada.",
+        q: "Do you work with e-commerce stores in the United States?",
+        a: "Yes, remotely and in English. Papurro is based in Uruguay and also works with e-commerce stores in Argentina and Uruguay, in Spanish. Everything is coordinated by email and video call.",
       },
       {
-        q: "¿Qué se puede automatizar en una tienda de e-commerce en Chile?",
-        a: "Lo repetitivo: pasar pedidos a tu sistema de gestión, avisar despachos con el seguimiento del courier, sincronizar stock entre canales, mandar reportes y ordenar las consultas de correo y WhatsApp en un solo lugar.",
+        q: "What can be automated in a US e-commerce store?",
+        a: "The repetitive stuff: pushing orders into your management system, sending shipping notices with carrier tracking, syncing stock across channels, sending reports, and pulling email and WhatsApp inquiries into one place.",
       },
       {
-        q: "¿Cuánto cuesta?",
-        a: "Se cotiza por proyecto, no por plan mensual. Me cuentas qué te duele, reviso tu setup y te paso un número. Sin permanencia y sin letra chica.",
+        q: "How much does it cost?",
+        a: "It's quoted per project, not a monthly plan. You tell me what's hurting, I review your setup, and I give you a number. No lock-in, no fine print.",
       },
       {
-        q: "¿Eres una agencia?",
-        a: "No. Papurro es una sola persona. Te responde y te hace el trabajo la misma persona, en 24 a 48 horas hábiles.",
+        q: "Are you an agency?",
+        a: "No. Papurro is one person. The same person who replies to you is the one who does the work, within 24 to 48 business hours.",
       },
     ],
   },
