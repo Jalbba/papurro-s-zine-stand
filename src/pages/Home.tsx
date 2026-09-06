@@ -85,7 +85,7 @@ export default function Home() {
         <div className="relative grid items-center gap-8 md:grid-cols-[1.1fr_0.9fr]">
           <div>
             <p className="pill px-3 py-1.5 text-xs sm:text-sm">
-              Para tiendas Shopify en{" "}
+              Para tiendas de e-commerce en{" "}
               <span aria-live="polite">
                 {pais.nombre} {pais.bandera}
               </span>
@@ -95,12 +95,12 @@ export default function Home() {
               id="hero-title"
               className="mt-5 text-[2.9rem] leading-[1.06] sm:text-6xl md:text-7xl"
             >
-              hagamos que tu shopify <span className="marker">labure solo</span>.
+              hagamos que tu e-commerce <span className="marker">labure solo</span>.
             </h1>
 
             <p className="mt-5 max-w-md text-base font-semibold sm:text-lg">
-              Automatización, IA aplicada y atención al cliente para tiendas Shopify de Uruguay,
-              Argentina y Chile. No soy una agencia. Soy Papurro.
+              Automatización, IA aplicada y atención al cliente para tiendas de e-commerce de
+              Uruguay, Argentina y Chile. No soy una agencia. Soy Papurro.
             </p>
 
             <a href="#diagnostico" className="btn-press btn-ink mt-7 px-6 py-4 text-lg sm:text-xl">
@@ -125,11 +125,11 @@ export default function Home() {
       {/* Respuesta corta: lo primero que levanta un buscador o un asistente de IA */}
       <section className="card p-5 sm:p-9" aria-labelledby="que-es-title">
         <h2 id="que-es-title" className="text-2xl sm:text-3xl">
-          automatización, ia y soporte para tiendas <span className="marker">shopify</span>
+          automatización, ia y soporte para tiendas <span className="marker">e-commerce</span>
         </h2>
         <div className="mt-5">
           <ResumenRapido>
-            Papurro es una persona —no una agencia ni un bot— que ayuda a tiendas Shopify de
+            Papurro es una persona —no una agencia ni un bot— que ayuda a tiendas de e-commerce de
             Uruguay, Argentina y Chile con automatización, IA aplicada, atención al cliente y
             optimización. Presupuesto por proyecto, sin planes mensuales. Contacto:{" "}
             <a href={MAILTO} className="underline underline-offset-4">
@@ -166,7 +166,8 @@ export default function Home() {
         </ul>
 
         <p className="mt-7 rounded-3xl bg-[color-mix(in_oklab,var(--grad-purple)_8%,white)] px-5 py-4 text-sm font-semibold sm:text-base">
-          ✨ Todo pensado para que tu Shopify funcione mejor, venda más y te dé tu vida de vuelta.
+          ✨ Todo pensado para que tu e-commerce funcione mejor, venda más y te dé tu vida de
+          vuelta.
         </p>
       </section>
 

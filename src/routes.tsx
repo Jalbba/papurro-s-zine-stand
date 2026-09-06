@@ -17,9 +17,9 @@ export type Route = {
 
 const homeHead: HeadData = {
   path: "/",
-  title: "Automatización Shopify en Uruguay, Argentina y Chile · Papurro",
+  title: "Automatización e-commerce en Uruguay, Argentina y Chile · Papurro",
   description:
-    "Una persona (no una agencia) que automatiza tiendas Shopify en Uruguay, Argentina y Chile: IA aplicada, atención al cliente y optimización. info@papurro.com",
+    "Una persona (no una agencia) que automatiza tiendas de e-commerce en Uruguay, Argentina y Chile: IA aplicada, atención al cliente y optimización. info@papurro.com",
   lang: "es",
   ogLocale: "es_UY",
 };
@@ -28,7 +28,7 @@ homeHead.jsonLd = [
   webPageLd(homeHead),
   faqLd(FAQ_HOME),
   serviceLd({
-    name: "Automatización, IA y soporte para tiendas Shopify",
+    name: "Automatización, IA y soporte para tiendas de e-commerce",
     description: ONE_LINER,
     areaIso: PAISES.map((p) => p.iso),
     areaNames: PAISES.map((p) => p.nombre),
@@ -80,7 +80,7 @@ function paisRoute(pais: (typeof CONTENIDO_PAISES)[number]): Route {
     ]),
     faqLd(pais.faqs),
     serviceLd({
-      name: `Automatización de Shopify para tiendas en ${pais.nombre}`,
+      name: `Automatización de e-commerce para tiendas en ${pais.nombre}`,
       description: pais.resumen,
       areaIso: [pais.iso],
       areaNames: [pais.nombre],

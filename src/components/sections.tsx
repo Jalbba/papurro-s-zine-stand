@@ -93,9 +93,9 @@ export function GrillaPaises({ excluir }: { excluir?: string }) {
       <Squiggle className="mt-3" />
 
       <p className="mt-6 max-w-2xl text-sm leading-relaxed sm:text-base">
-        Trabajo en remoto con tiendas Shopify de Uruguay, Argentina y Chile. Cada país tiene sus
-        propias formas de cobrar, despachar y facturar: entrá al tuyo y te cuento cómo encaro cada
-        caso.
+        Trabajo en remoto con tiendas de e-commerce de Uruguay, Argentina y Chile. Cada país tiene
+        sus propias formas de cobrar, despachar y facturar: entrá al tuyo y te cuento cómo encaro
+        cada caso.
       </p>
 
       <ul className="mt-7 grid gap-4 sm:grid-cols-3">
@@ -107,7 +107,7 @@ export function GrillaPaises({ excluir }: { excluir?: string }) {
             >
               <span>
                 <span className="font-display text-xl lowercase">{p.nombre}</span>
-                <span className="mt-1 block text-xs text-ink-soft">Shopify en {p.nombre} →</span>
+                <span className="mt-1 block text-xs text-ink-soft">E-commerce en {p.nombre} →</span>
               </span>
               <span aria-hidden="true" className="text-3xl">
                 {p.bandera}

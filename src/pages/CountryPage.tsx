@@ -44,7 +44,7 @@ export default function CountryPage({ pais }: { pais: PaisContenido }) {
         <div className="relative mt-6 grid items-center gap-8 md:grid-cols-[1.1fr_0.9fr]">
           <div>
             <p className="pill px-3 py-1.5 text-xs sm:text-sm">
-              Tiendas Shopify en {pais.nombre} {pais.bandera}
+              Tiendas de e-commerce en {pais.nombre} {pais.bandera}
             </p>
 
             <h1
@@ -55,8 +55,8 @@ export default function CountryPage({ pais }: { pais: PaisContenido }) {
             </h1>
 
             <p className="mt-5 max-w-lg text-base font-semibold sm:text-lg">
-              Automatización, IA aplicada, atención al cliente y optimización para tiendas Shopify{" "}
-              {pais.gentilicio}. Una persona, no una agencia.
+              Automatización, IA aplicada, atención al cliente y optimización para tiendas de
+              e-commerce {pais.gentilicio}. Una persona, no una agencia.
             </p>
 
             <a href="#diagnostico" className="btn-press btn-ink mt-7 px-6 py-4 text-lg sm:text-xl">
@@ -71,7 +71,7 @@ export default function CountryPage({ pais }: { pais: PaisContenido }) {
           <div className="mx-auto w-[12rem] sm:w-[17rem]">
             <PMark
               className="mascot-idle h-auto w-full drop-shadow-[0_30px_45px_rgba(10,17,40,0.25)]"
-              alt={`Papurro, automatización de Shopify para ${pais.nombre}`}
+              alt={`Papurro, automatización de e-commerce para ${pais.nombre}`}
               priority
             />
           </div>
@@ -81,7 +81,7 @@ export default function CountryPage({ pais }: { pais: PaisContenido }) {
       {/* Resumen citable + intro */}
       <section className="card p-5 sm:p-9" aria-labelledby="resumen-title">
         <h2 id="resumen-title" className="text-2xl sm:text-3xl">
-          shopify en {pais.nombre.toLowerCase()}: <span className="marker">qué hago</span>
+          e-commerce en {pais.nombre.toLowerCase()}: <span className="marker">qué hago</span>
         </h2>
         <div className="mt-5">
           <ResumenRapido>{pais.resumen}</ResumenRapido>

@@ -37,17 +37,17 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
     hreflang: "es-UY",
     ogLocale: "es_UY",
     moneda: "UYU",
-    title: "Automatización Shopify en Uruguay · Papurro",
+    title: "Automatización e-commerce en Uruguay · Papurro",
     description:
-      "Ayudo a tiendas Shopify uruguayas con automatización, IA aplicada, atención al cliente y optimización. Una persona, no una agencia. Escribime a info@papurro.com.",
-    h1: "automatización de shopify en",
+      "Ayudo a tiendas de e-commerce uruguayas con automatización, IA aplicada, atención al cliente y optimización. Una persona, no una agencia. Escribime a info@papurro.com.",
+    h1: "automatización de e-commerce en",
     h1Marker: "Uruguay",
     resumen:
-      "Papurro trabaja con tiendas Shopify que operan en Uruguay: automatiza tareas repetitivas, " +
+      "Papurro trabaja con tiendas de e-commerce que operan en Uruguay: automatiza tareas repetitivas, " +
       "aplica IA donde realmente sirve, ordena la atención al cliente y optimiza la tienda. " +
       "Es una sola persona, cotiza por proyecto y contesta los mails en 24 a 48 horas hábiles.",
     intro: [
-      "Si tenés una tienda Shopify en Uruguay, seguro conocés la escena: pedidos que se copian a mano a una planilla, stock que se actualiza cuando alguien se acuerda, y consultas por mail, Instagram y WhatsApp al mismo tiempo.",
+      "Si tenés una tienda de e-commerce en Uruguay, seguro conocés la escena: pedidos que se copian a mano a una planilla, stock que se actualiza cuando alguien se acuerda, y consultas por mail, Instagram y WhatsApp al mismo tiempo.",
       "Eso se arregla. No con una plataforma nueva ni con un equipo de diez personas: sacando los pasos manuales del medio, de a uno, empezando por el que más te duele.",
     ],
     contexto: [
@@ -70,7 +70,7 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
     ejemplos: [
       "Pedido pagado → alta en tu planilla o sistema de gestión, sin copiar y pegar.",
       "Aviso automático al cliente cuando el pedido sale a despacho, con el número de seguimiento que corresponda.",
-      "Stock sincronizado entre Shopify y lo que vendés por fuera (local, Instagram, mayorista).",
+      "Stock sincronizado entre tu e-commerce y lo que vendés por fuera (local, Instagram, mayorista).",
       "Consultas de mail y WhatsApp ordenadas en un solo lugar, con respuestas listas para las preguntas de siempre.",
       "Reporte semanal de ventas, productos que se mueven y quiebres de stock, servido en tu correo.",
     ],
@@ -80,11 +80,11 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
         a: "Una llamada corta, gratis y sin compromiso. Me contás cómo funciona hoy tu tienda en Uruguay, miro dónde se te va el tiempo y te digo qué automatizaría primero. Si de ahí sale un proyecto se cotiza, y si no, te quedás igual con la lista de qué conviene arreglar. Lo pedís por el formulario de esta página o por WhatsApp al +598 92 061 005.",
       },
       {
-        q: "¿Trabajás con tiendas Shopify uruguayas?",
-        a: "Sí. Papurro está en Uruguay y trabaja con tiendas Shopify que operan acá, en español y en horario uruguayo. También atiende tiendas de Argentina y Chile, en remoto.",
+        q: "¿Trabajás con tiendas de e-commerce uruguayas?",
+        a: "Sí. Papurro está en Uruguay y trabaja con tiendas de e-commerce que operan acá, en español y en horario uruguayo. También atiende tiendas de Argentina y Chile, en remoto.",
       },
       {
-        q: "¿Qué se puede automatizar en una tienda Shopify en Uruguay?",
+        q: "¿Qué se puede automatizar en una tienda de e-commerce en Uruguay?",
         a: "Lo repetitivo: pasar pedidos a tu planilla o sistema de gestión, avisar despachos, sincronizar stock entre canales, mandar reportes de ventas y ordenar las consultas de mail y WhatsApp en un solo lugar.",
       },
       {
@@ -106,18 +106,18 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
     hreflang: "es-AR",
     ogLocale: "es_AR",
     moneda: "ARS",
-    title: "Automatización Shopify en Argentina · Papurro",
+    title: "Automatización e-commerce en Argentina · Papurro",
     description:
-      "Automatización, IA aplicada, atención al cliente y optimización para tiendas Shopify en Argentina. Una persona, presupuesto por proyecto. info@papurro.com.",
-    h1: "automatización de shopify en",
+      "Automatización, IA aplicada, atención al cliente y optimización para tiendas de e-commerce en Argentina. Una persona, presupuesto por proyecto. info@papurro.com.",
+    h1: "automatización de e-commerce en",
     h1Marker: "Argentina",
     resumen:
-      "Papurro trabaja con tiendas Shopify que venden en Argentina: automatiza tareas repetitivas, " +
+      "Papurro trabaja con tiendas de e-commerce que venden en Argentina: automatiza tareas repetitivas, " +
       "aplica IA donde realmente sirve, ordena la atención al cliente y optimiza la tienda. " +
       "Es una sola persona, cotiza por proyecto y contesta los mails en 24 a 48 horas hábiles.",
     intro: [
       "Vender en Argentina tiene un deporte extra: todo cambia. Precios, costos, promociones bancarias, cuotas. Y cada cambio, si lo hacés a mano, son horas de planilla y errores que aparecen en el peor momento.",
-      "Trabajo remoto con tiendas Shopify argentinas para sacar ese trabajo manual del medio, empezando por lo que más tiempo te come hoy.",
+      "Trabajo remoto con tiendas de e-commerce argentinas para sacar ese trabajo manual del medio, empezando por lo que más tiempo te come hoy.",
     ],
     contexto: [
       {
@@ -154,11 +154,11 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
         a: "Una llamada corta, gratis y sin compromiso. Me contás cómo funciona hoy tu tienda en Argentina, miro dónde se te va el tiempo y te digo qué automatizaría primero. Si de ahí sale un proyecto se cotiza, y si no, te quedás igual con la lista de qué conviene arreglar. Lo pedís por el formulario de esta página o por WhatsApp al +598 92 061 005.",
       },
       {
-        q: "¿Trabajás con tiendas Shopify de Argentina?",
-        a: "Sí, en remoto y en español. Papurro está en Uruguay y trabaja con tiendas Shopify de Argentina, Chile y Uruguay. Todo se coordina por mail y videollamada.",
+        q: "¿Trabajás con tiendas de e-commerce de Argentina?",
+        a: "Sí, en remoto y en español. Papurro está en Uruguay y trabaja con tiendas de e-commerce de Argentina, Chile y Uruguay. Todo se coordina por mail y videollamada.",
       },
       {
-        q: "¿Se pueden automatizar las actualizaciones de precios en Shopify?",
+        q: "¿Se pueden automatizar las actualizaciones de precios en tu e-commerce?",
         a: "Sí. Se puede actualizar el catálogo de forma masiva a partir de tu lista de costos, con reglas por categoría o proveedor, y dejar en tus manos el momento de aplicarlas.",
       },
       {
@@ -180,17 +180,17 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
     hreflang: "es-CL",
     ogLocale: "es_CL",
     moneda: "CLP",
-    title: "Automatización Shopify en Chile · Papurro",
+    title: "Automatización e-commerce en Chile · Papurro",
     description:
-      "Automatización, IA aplicada, atención al cliente y optimización para tiendas Shopify en Chile. Una persona, presupuesto por proyecto. info@papurro.com.",
-    h1: "automatización de shopify en",
+      "Automatización, IA aplicada, atención al cliente y optimización para tiendas de e-commerce en Chile. Una persona, presupuesto por proyecto. info@papurro.com.",
+    h1: "automatización de e-commerce en",
     h1Marker: "Chile",
     resumen:
-      "Papurro trabaja con tiendas Shopify que venden en Chile: automatiza tareas repetitivas, " +
+      "Papurro trabaja con tiendas de e-commerce que venden en Chile: automatiza tareas repetitivas, " +
       "aplica IA donde realmente sirve, ordena la atención al cliente y optimiza la tienda. " +
       "Es una sola persona, cotiza por proyecto y responde los correos en 24 a 48 horas hábiles.",
     intro: [
-      "Si tienes una tienda Shopify en Chile, el cuello de botella casi nunca es la tienda: es todo lo que pasa después de la compra. Pedidos que se copian a mano, despachos que se avisan uno por uno, consultas repartidas entre correo, Instagram y WhatsApp.",
+      "Si tienes una tienda de e-commerce en Chile, el cuello de botella casi nunca es la tienda: es todo lo que pasa después de la compra. Pedidos que se copian a mano, despachos que se avisan uno por uno, consultas repartidas entre correo, Instagram y WhatsApp.",
       "Trabajo remoto con tiendas chilenas para sacar ese trabajo manual del medio, partiendo por lo que más tiempo te quita hoy.",
     ],
     contexto: [
@@ -218,7 +218,7 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
     ejemplos: [
       "Pedido pagado → alta automática en tu planilla o sistema de gestión.",
       "Correo o mensaje de despacho automático, con el seguimiento del courier que corresponda.",
-      "Stock sincronizado entre Shopify y tus otros canales de venta.",
+      "Stock sincronizado entre tu e-commerce y tus otros canales de venta.",
       "Respuestas listas para las preguntas de siempre: plazos de despacho a regiones, cambios, tallas.",
       "Reporte semanal de ventas y quiebres de stock, en tu correo.",
     ],
@@ -228,11 +228,11 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
         a: "Una llamada corta, gratis y sin compromiso. Me contás cómo funciona hoy tu tienda en Chile, miro dónde se te va el tiempo y te digo qué automatizaría primero. Si de ahí sale un proyecto se cotiza, y si no, te quedás igual con la lista de qué conviene arreglar. Lo pedís por el formulario de esta página o por WhatsApp al +598 92 061 005.",
       },
       {
-        q: "¿Trabajas con tiendas Shopify de Chile?",
-        a: "Sí, en remoto y en español. Papurro está en Uruguay y trabaja con tiendas Shopify de Chile, Argentina y Uruguay. Todo se coordina por correo y videollamada.",
+        q: "¿Trabajas con tiendas de e-commerce de Chile?",
+        a: "Sí, en remoto y en español. Papurro está en Uruguay y trabaja con tiendas de e-commerce de Chile, Argentina y Uruguay. Todo se coordina por correo y videollamada.",
       },
       {
-        q: "¿Qué se puede automatizar en una tienda Shopify en Chile?",
+        q: "¿Qué se puede automatizar en una tienda de e-commerce en Chile?",
         a: "Lo repetitivo: pasar pedidos a tu sistema de gestión, avisar despachos con el seguimiento del courier, sincronizar stock entre canales, mandar reportes y ordenar las consultas de correo y WhatsApp en un solo lugar.",
       },
       {

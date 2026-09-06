@@ -23,8 +23,8 @@ export default function Privacidad() {
           <div>
             <h2 className="text-2xl">quién soy</h2>
             <p className="mt-2">
-              Papurro es una persona física que trabaja desde Uruguay ayudando a tiendas Shopify de
-              Uruguay, Argentina y Chile. Los canales de contacto son{" "}
+              Papurro es una persona física que trabaja desde Uruguay ayudando a tiendas de
+              e-commerce de Uruguay, Argentina y Chile. Los canales de contacto son{" "}
               <a href={MAILTO} className="underline underline-offset-4">
                 {EMAIL}
               </a>{" "}
