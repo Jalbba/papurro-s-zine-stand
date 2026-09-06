@@ -106,18 +106,16 @@ export function Footer() {
                 WhatsApp {WHATSAPP_DISPLAY}
               </a>
             </li>
-            <li>
-              <a href="/privacidad/" className="underline underline-offset-4 hover:text-paper">
-                Privacidad
-              </a>
-            </li>
             <li className="text-paper/60">Respondo en 24-48 h hábiles</li>
           </ul>
         </nav>
       </div>
 
-      <p className="mx-auto mt-8 max-w-6xl text-xs text-paper/60">
-        Hecho en Uruguay 🧉 · © {new Date().getFullYear()} Papurro
+      <p className="mx-auto mt-8 flex max-w-6xl flex-wrap items-center gap-x-2 text-xs text-paper/60">
+        <span>Hecho en Uruguay 🧉 · © {new Date().getFullYear()} Papurro · </span>
+        <a href="/privacidad/" className="underline underline-offset-4 hover:text-paper/90">
+          privacidad
+        </a>
       </p>
     </footer>
   );

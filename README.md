@@ -124,9 +124,11 @@ Small line: "Contesto en 24-48hs hábiles. Soy uno solo, tené paciencia 🐶"
 - Fast: no heavy libs on the critical path, no image assets beyond the P mark, everything else
   inline SVG + CSS.
 - **WebGL background (`src/components/GlFondo.tsx` + `src/components/gl/escena.ts`)**: Three.js
-  floats a handful of translucent spheres, facetted gems and rings — in the six palette colors — behind
-  the `wash` panels of the hero and the closing CTA. It is decoration, and it stays out of the way:
-  - Three is a **dynamic import**, so it lands in its own chunk (~123 kB gzip) that the initial page
+  floats a handful of translucent spheres, facetted gems, rings and torus knots — in the six palette
+  colors, each one breathing its own emissive glow — behind the `wash` panels of the hero and the
+  closing CTA, plus two thin layers of drifting, twinkling sparkles for depth. It is decoration, and
+  it stays out of the way:
+  - Three is a **dynamic import**, so it lands in its own chunk (~124 kB gzip) that the initial page
     load never touches. The prerendered HTML ships an empty `<canvas>`; the CSS `wash` is what the
     visitor sees first, and it stays visible underneath.
   - The chunk is fetched only when the panel is about to enter the viewport _and_ the browser is
