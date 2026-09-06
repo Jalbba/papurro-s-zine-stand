@@ -2,7 +2,7 @@
 
 ## WHAT THE BUSINESS IS
 
-Papurro is ONE person (not an agency, not a team, not a bot) who helps e-commerce stores operating in Uruguay with: automation, applied AI, customer care setup, and store optimization.
+Papurro is ONE person (not an agency, not a team, not a bot) who helps e-commerce stores operating in Uruguay, Argentina and the United States with: automation, applied AI, customer care setup, and store optimization.
 
 ## CRITICAL HONESTY RULES — DO NOT VIOLATE
 
@@ -51,7 +51,7 @@ REQUIRED:
 
 **2. Hero** (paper background)
 
-- Small rotated badge sticker: "Para tiendas de e-commerce en Uruguay 🇺🇾"
+- Small rotated badge sticker: "Para tiendas de e-commerce en Uruguay, Argentina y Estados Unidos 🇺🇾🇦🇷🇺🇸"
 - H1 huge: "Hago que tu e-commerce labure solo." — with "labure solo" inside a pink highlighter box.
 - Sub: "Automatización, IA que sirve y atención al cliente ordenada. No soy una agencia: soy una persona, con una computadora y mucho café."
 - Big button: "diagnóstico gratis de 20 min →" → `#diagnostico`.
@@ -96,7 +96,7 @@ Giant black button "info@papurro.com" → `mailto:info@papurro.com?subject=Hola%
 Plus a small ghost button "Copiar el mail" that copies to clipboard and shows a rotated "¡copiado!" sticker.
 Small line: "Contesto en 24-48hs hábiles. Soy uno solo, tené paciencia 🐶"
 
-**8. Footer** (ink background, paper text) — mascot mini + "papurro · e-commerce, automatización e IA para tiendas uruguayas · info@papurro.com · Hecho en Uruguay 🧉". Current year dynamic.
+**8. Footer** (ink background, paper text) — mascot mini + "papurro · e-commerce, automatización e IA para tiendas de Uruguay, Argentina y Estados Unidos · info@papurro.com · Hecho en Uruguay 🧉". Current year dynamic.
 
 ## TECH
 

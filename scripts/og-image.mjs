@@ -26,7 +26,10 @@ const FUENTES =
 async function fuentesEmbebidas() {
   const css = await (
     await fetch(FUENTES, {
-      headers: { "user-agent": "Mozilla/5.0 (X11; Linux x86_64) Chrome/120 Safari/537.36" },
+      headers: {
+        "user-agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      },
     })
   ).text();
 
@@ -60,25 +63,25 @@ html,body{width:1200px;height:630px;overflow:hidden;background:#fff}
   radial-gradient(100% 90% at 8% 100%, color-mix(in oklab,#fe3d7c 22%,white) 0%, transparent 60%),
   #fff;
   color:#0a1128;font-family:'Nunito',sans-serif;
-  display:flex;align-items:center;gap:24px;padding:52px 64px;overflow:hidden}
+  display:flex;align-items:center;gap:24px;padding:40px 64px;overflow:hidden}
 body{margin:0;position:relative}
 .rainbow{position:absolute;left:0;right:0;bottom:0;height:14px;background:${rainbow}}
 .left{flex:1.15}
-.mark{font-family:'Baloo 2';font-weight:800;font-size:36px;letter-spacing:-.02em;
+.mark{font-family:'Baloo 2';font-weight:800;font-size:34px;letter-spacing:-.02em;
   background:${rainbow};-webkit-background-clip:text;background-clip:text;color:transparent}
-h1{font-family:'Baloo 2';font-weight:800;font-size:66px;line-height:1.02;letter-spacing:-.03em;
-  margin-top:18px;text-transform:lowercase}
+h1{font-family:'Baloo 2';font-weight:800;font-size:56px;line-height:1.05;letter-spacing:-.03em;
+  margin-top:14px;text-transform:lowercase}
 h1 .mk{background:${rainbow};-webkit-background-clip:text;background-clip:text;color:transparent}
-.sub{margin-top:20px;font-size:26px;font-weight:700;color:#3a4460;line-height:1.35}
-.mail{margin-top:26px;display:inline-block;background:#0a1128;color:#fff;font-family:'Baloo 2';
-  font-weight:800;font-size:27px;padding:12px 26px;border-radius:999px}
+.sub{margin-top:16px;font-size:24px;font-weight:700;color:#3a4460;line-height:1.35}
+.mail{margin-top:20px;display:inline-block;background:#0a1128;color:#fff;font-family:'Baloo 2';
+  font-weight:800;font-size:25px;padding:11px 24px;border-radius:999px}
 .right{flex:.85;display:flex;justify-content:center}
 .right img{width:100%;max-width:360px;height:auto;filter:drop-shadow(0 26px 40px rgba(10,17,40,.25))}
 </style>
 <div class="stage">
   <div class="left">
     <div class="mark">papurro</div>
-    <h1>hagamos que tu e-commerce <span class="mk">labure solo</span>.</h1>
+    <h1>hagamos que tu <span style="white-space:nowrap">e-commerce</span> <span class="mk">labure solo</span>.</h1>
     <div class="sub">Automatización, IA y atención al cliente<br>para tiendas de e-commerce de Uruguay, Argentina y Estados Unidos.</div>
     <div class="mail">info@papurro.com</div>
   </div>
