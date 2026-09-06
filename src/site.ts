@@ -11,7 +11,14 @@ export const MAILTO = `mailto:${EMAIL}`;
 export const MAILTO_LONG = `mailto:${EMAIL}?subject=Hola%20Papurro&body=Hola!%20Tengo%20una%20tienda%20de%20e-commerce%20y...`;
 
 /** Mail con asunto por país, para saber de dónde llegó la consulta. */
-export function mailtoPais(pais: string) {
+export function mailtoPais(pais: string, idioma: Idioma = "es") {
+  if (idioma === "en") {
+    return `mailto:${EMAIL}?subject=${encodeURIComponent(
+      `Hi Papurro (${pais})`,
+    )}&body=${encodeURIComponent(
+      `Hi! I run an e-commerce store in ${pais} and need help with...`,
+    )}`;
+  }
   return `mailto:${EMAIL}?subject=${encodeURIComponent(
     `Hola Papurro (${pais})`,
   )}&body=${encodeURIComponent(
@@ -22,9 +29,10 @@ export function mailtoPais(pais: string) {
 /** Frase corta y citable: lo que un buscador o un LLM va a extraer. */
 export const ONE_LINER =
   "Papurro es una persona —no una agencia— que ayuda a tiendas de e-commerce de Uruguay, " +
-  "Argentina y Chile con automatización, IA aplicada, atención al cliente y optimización.";
+  "Argentina y Estados Unidos con automatización, IA aplicada, atención al cliente y optimización.";
 
 export const RESPONSE_TIME = "24 a 48 horas hábiles";
+export const RESPONSE_TIME_EN = "24 to 48 business hours";
 
 /* ---------------- WhatsApp ---------------- */
 
@@ -42,8 +50,17 @@ export const WHATSAPP_URL = waLink(
   "Hola Papurro! Tengo una tienda de e-commerce y quiero el diagnóstico de 20 minutos.",
 );
 
+export const WHATSAPP_URL_EN = waLink(
+  "Hi Papurro! I run an e-commerce store and I'd like the 20-minute diagnostic.",
+);
+
 /** WhatsApp con el país ya escrito, para saber de dónde llegó la consulta. */
-export function whatsappPais(pais: string) {
+export function whatsappPais(pais: string, idioma: Idioma = "es") {
+  if (idioma === "en") {
+    return waLink(
+      `Hi Papurro! I run an e-commerce store in ${pais} and I'd like the 20-minute diagnostic.`,
+    );
+  }
   return waLink(
     `Hola Papurro! Tengo una tienda de e-commerce en ${pais} y quiero el diagnóstico de 20 minutos.`,
   );
@@ -61,6 +78,14 @@ export const DIAGNOSTICO = {
     "qué automatizaría primero. Salga o no un proyecto de ahí, te quedás con la lista.",
 } as const;
 
+export const DIAGNOSTICO_EN = {
+  minutos: 20,
+  nombre: "20-minute diagnostic",
+  resumen:
+    "A free, no-strings-attached 20-minute call: you tell me how things work today and I tell you " +
+    "what I'd automate first. Whether or not it turns into a project, you keep the list.",
+} as const;
+
 /* ---------------- Formulario ---------------- */
 
 export type Consulta = {
@@ -69,11 +94,35 @@ export type Consulta = {
   mensaje: string;
   /** País de la landing desde la que se envía, si es una página por país. */
   pais?: string | undefined;
+  idioma?: Idioma | undefined;
 };
 
 /** El formulario no tiene backend: arma un mailto con todo ya escrito y deja
  *  que el cliente de correo del visitante lo mande. */
-export function mailtoConsulta({ nombre, tienda, mensaje, pais }: Consulta) {
+export function mailtoConsulta({ nombre, tienda, mensaje, pais, idioma = "es" }: Consulta) {
+  if (idioma === "en") {
+    const quien = nombre.trim() || "an e-commerce store";
+    const asunto = pais ? `20-min diagnostic (${pais}) — ${quien}` : `20-min diagnostic — ${quien}`;
+
+    const cuerpo = [
+      "Hi Papurro!",
+      "",
+      `Name: ${nombre.trim()}`,
+      `Store: ${tienda.trim()}`,
+      pais ? `Country: ${pais}` : null,
+      "",
+      "What's wasting my time:",
+      mensaje.trim(),
+      "",
+      "—",
+      "Sent from the form on papurro.com",
+    ]
+      .filter((linea) => linea !== null)
+      .join("\n");
+
+    return `mailto:${EMAIL}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+  }
+
   const quien = nombre.trim() || "una tienda de e-commerce";
   const asunto = pais
     ? `Diagnóstico de 20 min (${pais}) — ${quien}`
@@ -101,40 +150,66 @@ export function mailtoConsulta({ nombre, tienda, mensaje, pais }: Consulta) {
 export const PRICING_MODEL =
   "Presupuesto por proyecto, sin planes mensuales ni permanencia: mirás tu caso, se cotiza y se hace.";
 
+/** Idioma en el que se muestra la página de un país. */
+export type Idioma = "es" | "en";
+
 /** Países atendidos. El orden manda en menús, sitemap y JSON-LD. */
 export const PAISES = [
   {
     slug: "uruguay",
     nombre: "Uruguay",
+    nombreEs: "Uruguay",
     gentilicio: "uruguayas",
     bandera: "🇺🇾",
     iso: "UY",
     hreflang: "es-UY",
+    ogLocale: "es_UY",
     moneda: "UYU",
+    idioma: "es",
   },
   {
     slug: "argentina",
     nombre: "Argentina",
+    nombreEs: "Argentina",
     gentilicio: "argentinas",
     bandera: "🇦🇷",
     iso: "AR",
     hreflang: "es-AR",
+    ogLocale: "es_AR",
     moneda: "ARS",
+    idioma: "es",
   },
   {
-    slug: "chile",
-    nombre: "Chile",
-    gentilicio: "chilenas",
-    bandera: "🇨🇱",
-    iso: "CL",
-    hreflang: "es-CL",
-    moneda: "CLP",
+    slug: "usa",
+    nombre: "United States",
+    /** Cómo se muestra este país cuando la UI que lo rodea está en castellano. */
+    nombreEs: "Estados Unidos",
+    gentilicio: "American",
+    bandera: "🇺🇸",
+    iso: "US",
+    hreflang: "en-US",
+    ogLocale: "en_US",
+    moneda: "USD",
+    idioma: "en",
   },
 ] as const;
 
 export type Pais = (typeof PAISES)[number];
 
-export const SERVICIOS = [
+/** Nombre de un país tal como se muestra en una UI en el idioma dado
+ *  (la navegación, el pie de página, la grilla de países). */
+export function nombrePais(p: Pais, idioma: Idioma) {
+  return idioma === "es" ? p.nombreEs : p.nombre;
+}
+
+export type Servicio = {
+  id: "automatizacion" | "ia" | "atencion" | "optimizacion";
+  titulo: string;
+  tituloLargo: string;
+  texto: string;
+};
+
+export const SERVICIOS: readonly Servicio[] = [
   {
     id: "automatizacion",
     titulo: "automatización",
@@ -164,3 +239,35 @@ export const SERVICIOS = [
       "Reviso velocidad de carga, checkout, catálogo e integraciones para detectar y corregir lo que le está costando ventas a tu tienda.",
   },
 ] as const;
+
+/** Misma info que SERVICIOS, en inglés, para las páginas cuyo idioma es "en". */
+export const SERVICIOS_EN: readonly Servicio[] = [
+  {
+    id: "automatizacion",
+    titulo: "automation",
+    tituloLargo: "Automation for e-commerce stores",
+    texto:
+      "I connect your store to the tools you already use so repetitive tasks — loading orders, updating stock, notifying shipments, generating reports — start happening on their own.",
+  },
+  {
+    id: "ia",
+    titulo: "ideas that work",
+    tituloLargo: "AI applied to your store's operations",
+    texto:
+      "I apply AI to concrete problems in your operation: classifying orders, drafting replies, summarizing information, sorting loose data. No demos nobody ends up using.",
+  },
+  {
+    id: "atencion",
+    titulo: "customer support",
+    tituloLargo: "Customer support, organized",
+    texto:
+      "I organize your support channels — email, WhatsApp, social — so inquiries get answered faster and no ticket falls through the cracks.",
+  },
+  {
+    id: "optimizacion",
+    titulo: "optimization",
+    tituloLargo: "Store optimization",
+    texto:
+      "I review load speed, checkout, catalog and integrations to find and fix what's costing your store sales.",
+  },
+];

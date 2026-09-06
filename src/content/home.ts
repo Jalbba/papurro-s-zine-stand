@@ -5,11 +5,11 @@ import type { Faq } from "@/seo";
 export const FAQ_HOME: Faq[] = [
   {
     q: "¿Qué es Papurro?",
-    a: "Papurro es una persona —no una agencia ni un bot— que ayuda a tiendas de e-commerce de Uruguay, Argentina y Chile con automatización, IA aplicada, atención al cliente y optimización de la tienda.",
+    a: "Papurro es una persona —no una agencia ni un bot— que ayuda a tiendas de e-commerce de Uruguay, Argentina y Estados Unidos con automatización, IA aplicada, atención al cliente y optimización de la tienda.",
   },
   {
     q: "¿En qué países trabajás?",
-    a: "Uruguay, Argentina y Chile, en remoto y en español. La base está en Uruguay y también se atienden tiendas de otros países si el proyecto encaja.",
+    a: "Uruguay, Argentina y Estados Unidos, en remoto. Con Uruguay y Argentina trabajo en castellano; con Estados Unidos, en inglés. También se atienden tiendas de otros países si el proyecto encaja.",
   },
   {
     q: "¿Qué se puede automatizar en una tienda de e-commerce?",

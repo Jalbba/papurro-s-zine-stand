@@ -17,9 +17,9 @@ export type Route = {
 
 const homeHead: HeadData = {
   path: "/",
-  title: "Automatización e-commerce en Uruguay, Argentina y Chile · Papurro",
+  title: "Automatización e-commerce en Uruguay, Argentina y Estados Unidos · Papurro",
   description:
-    "Una persona (no una agencia) que automatiza tiendas de e-commerce en Uruguay, Argentina y Chile: IA aplicada, atención al cliente y optimización. info@papurro.com",
+    "Una persona (no una agencia) que automatiza tiendas de e-commerce en Uruguay, Argentina y Estados Unidos: IA aplicada, atención al cliente y optimización. info@papurro.com",
   lang: "es",
   ogLocale: "es_UY",
 };

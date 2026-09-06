@@ -161,12 +161,12 @@ lang, og:locale, JSON-LD). Adding a page = adding an entry there; sitemap, hrefl
 | Ruta                                | Para qué                                                       |
 | ----------------------------------- | -------------------------------------------------------------- |
 | `/`                                 | Home genérica, hub de enlaces internos                         |
-| `/uruguay/` `/argentina/` `/chile/` | Landing por país: copy local, FAQ local, misma oferta          |
+| `/uruguay/` `/argentina/` `/usa/`   | Landing por país: copy local, FAQ local, misma oferta          |
 | `/privacidad/`                      | Transparencia (y requisito habitual de las plataformas de ads) |
 | `/404.html`                         | Fallback de GitHub Pages, `noindex`                            |
 
 **Qué se genera en cada página**: canonical, `robots`, Open Graph + Twitter card con
-`/og.png`, cluster `hreflang` (`es`, `es-UY`, `es-AR`, `es-CL`, `x-default`) y un `@graph` de
+`/og.png`, cluster `hreflang` (`es`, `es-UY`, `es-AR`, `en-US`, `x-default`) y un `@graph` de
 JSON-LD con `ProfessionalService`, `Person`, `WebSite`, `WebPage`, `BreadcrumbList`,
 `FAQPage` y `Service`.
 
