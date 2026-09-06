@@ -1,7 +1,5 @@
 # Papurro's Zine Stand
 
-Build a mobile-first one-page marketing site for **papurro.com**, entirely in **Rioplatense Spanish (voseo, Uruguayan)**. Tone: quirky, funny, self-deprecating, but competent and productive.
-
 ## WHAT THE BUSINESS IS
 
 Papurro is ONE person (not an agency, not a team, not a bot) who helps e-commerce stores operating in Uruguay with: automation, applied AI, customer care setup, and store optimization.
@@ -15,7 +13,7 @@ Papurro is ONE person (not an agency, not a team, not a bot) who helps e-commerc
 
 ## VISUAL DIRECTION — THIS IS THE MOST IMPORTANT PART
 
-Go **neo-brutalist / riso-print zine / sticker-book**. Loud, colorful, handmade, a little crooked. It must NOT look like a generic AI-generated SaaS landing page.
+Go **neo-brutalist / riso-print zine / sticker-book**. Loud, colorful, handmade, a little crooked.
 
 BANNED (do not use any of these):
 
@@ -46,13 +44,6 @@ REQUIRED:
 - A repeating subtle paper-grain / halftone dot texture over the page via CSS (SVG data-URI, very low opacity). No image files.
 - Thick wobbly hand-drawn divider between sections (inline SVG squiggle, ink-colored, 4px stroke, `stroke-linecap:round`).
 - Mobile-first: design 375px up. Big tap targets, one column, generous spacing. Desktop is just a wider version, max-w-5xl, still chunky.
-
-## LOGO / MASCOT (inline SVG, no image files)
-
-Draw a hand-drawn-feeling mascot: a lopsided scruffy **dog-potato** — a chunky blob head with two floppy uneven ears, one eye bigger than the other, a big goofy tongue hanging out sideways, three scraggly hairs on top. Thick 4px `#141110` strokes, flat fills in yellow/pink, deliberately imperfect and asymmetric (NOT geometric or perfectly centered). It should look drawn with a marker by hand, not vector-perfect.
-Wordmark next to it: "papurro" in Archivo Black lowercase, with a small pink underline scribble.
-Give the mascot a tiny idle animation (a slow 2s wiggle rotate ±2deg, and blink every ~5s). Respect `prefers-reduced-motion`.
-Use the same mascot as the favicon.
 
 ## PAGE STRUCTURE + COPY (use this copy, polish it, keep the voseo)
 
@@ -183,13 +174,6 @@ JSON-LD con `ProfessionalService`, `Person`, `WebSite`, `WebPage`, `BreadcrumbLi
 
 This project was built with [Lovable](https://lovable.dev).
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/d43cb134-fa74-4dab-87f8-dfad47673710).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
