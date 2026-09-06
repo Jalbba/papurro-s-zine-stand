@@ -5,14 +5,14 @@ import type { Faq } from "@/seo";
 export const FAQ_HOME: Faq[] = [
   {
     q: "¿Qué es Papurro?",
-    a: "Papurro es una persona —no una agencia ni un bot— que ayuda a tiendas Shopify de Uruguay, Argentina y Chile con automatización, IA aplicada, atención al cliente y optimización de la tienda.",
+    a: "Papurro es una persona —no una agencia ni un bot— que ayuda a tiendas de e-commerce de Uruguay, Argentina y Chile con automatización, IA aplicada, atención al cliente y optimización de la tienda.",
   },
   {
     q: "¿En qué países trabajás?",
     a: "Uruguay, Argentina y Chile, en remoto y en español. La base está en Uruguay y también se atienden tiendas de otros países si el proyecto encaja.",
   },
   {
-    q: "¿Qué se puede automatizar en una tienda Shopify?",
+    q: "¿Qué se puede automatizar en una tienda de e-commerce?",
     a: "Todo lo repetitivo: pasar pedidos a tu planilla o sistema de gestión, avisar despachos con el número de seguimiento, sincronizar stock entre canales, actualizar precios de forma masiva, mandar reportes de ventas y ordenar las consultas de mail y WhatsApp en un solo lugar.",
   },
   {

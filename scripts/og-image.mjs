@@ -78,8 +78,8 @@ h1 .mk{background:${rainbow};-webkit-background-clip:text;background-clip:text;c
 <div class="stage">
   <div class="left">
     <div class="mark">papurro</div>
-    <h1>hagamos que tu shopify <span class="mk">labure solo</span>.</h1>
-    <div class="sub">Automatización, IA y atención al cliente<br>para tiendas Shopify de Uruguay, Argentina y Chile.</div>
+    <h1>hagamos que tu e-commerce <span class="mk">labure solo</span>.</h1>
+    <div class="sub">Automatización, IA y atención al cliente<br>para tiendas de e-commerce de Uruguay, Argentina y Chile.</div>
     <div class="mail">info@papurro.com</div>
   </div>
   <div class="right"><img src="data:image/png;base64,${marca}"></div>

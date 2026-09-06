@@ -36,7 +36,7 @@ export type HeadData = {
 };
 
 export const OG_IMAGE = `${SITE_URL}/og.png`;
-const OG_IMAGE_ALT = "Papurro: automatización, IA y atención al cliente para tiendas Shopify";
+const OG_IMAGE_ALT = "Papurro: automatización, IA y atención al cliente para tiendas de e-commerce";
 
 export function absUrl(path: string) {
   return path === "/" ? `${SITE_URL}/` : `${SITE_URL}${path}`;
@@ -62,14 +62,14 @@ export function professionalServiceLd(): Record<string, unknown> {
     "@type": "ProfessionalService",
     "@id": ORG_ID,
     name: SITE_NAME,
-    alternateName: "Papurro · Shopify",
+    alternateName: "Papurro · e-commerce",
     url: `${SITE_URL}/`,
     email: EMAIL,
     telephone: WHATSAPP_E164,
     description: ONE_LINER,
     image: OG_IMAGE,
     logo: `${SITE_URL}/favicon.png`,
-    slogan: "Hagamos que tu Shopify labure solo",
+    slogan: "Hagamos que tu e-commerce labure solo",
     knowsLanguage: ["es", "en"],
     founder: { "@id": PERSON_ID },
     numberOfEmployees: { "@type": "QuantitativeValue", value: 1 },
@@ -97,7 +97,7 @@ export function professionalServiceLd(): Record<string, unknown> {
       },
     ],
     knowsAbout: [
-      "Shopify",
+      "e-commerce",
       "Automatización de e-commerce",
       "Inteligencia artificial aplicada",
       "Atención al cliente",
@@ -142,7 +142,7 @@ export function personLd(): Record<string, unknown> {
     "@id": PERSON_ID,
     name: "Papurro",
     description:
-      "La persona detrás de Papurro. Trabaja con pocas tiendas Shopify a la vez y contesta " +
+      "La persona detrás de Papurro. Trabaja con pocas tiendas de e-commerce a la vez y contesta " +
       `los mails en ${RESPONSE_TIME}.`,
     email: EMAIL,
     telephone: WHATSAPP_E164,
@@ -214,7 +214,7 @@ export function serviceLd(opts: {
     "@id": `${absUrl(opts.path)}#servicio`,
     name: opts.name,
     description: opts.description,
-    serviceType: "Automatización y optimización de tiendas Shopify",
+    serviceType: "Automatización y optimización de tiendas de e-commerce",
     provider: { "@id": ORG_ID },
     areaServed: opts.areaNames.map((name, i) => ({
       "@type": "Country",

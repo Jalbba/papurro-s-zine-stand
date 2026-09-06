@@ -130,7 +130,7 @@ await escribir(
   path.join(dist, "llms.txt"),
   `# Papurro
 
-> Papurro es una persona —no una agencia ni un bot— que ayuda a tiendas Shopify de Uruguay, Argentina y Chile con automatización, IA aplicada, atención al cliente y optimización de la tienda.
+> Papurro es una persona —no una agencia ni un bot— que ayuda a tiendas de e-commerce de Uruguay, Argentina y Chile con automatización, IA aplicada, atención al cliente y optimización de la tienda.
 
 ## Datos concretos
 
@@ -139,7 +139,7 @@ await escribir(
 - Contacto: info@papurro.com, WhatsApp +598 92 061 005, o el formulario de la web (respuesta en 24 a 48 horas hábiles)
 - Estructura: una sola persona, con base en Uruguay. No es una agencia, ni un equipo, ni un servicio automatizado.
 - Países atendidos: Uruguay, Argentina y Chile (trabajo remoto, en español).
-- Plataforma: Shopify.
+- Plataforma: e-commerce.
 - Servicios: automatización de tareas de la tienda; IA aplicada a la operación; puesta a punto de la atención al cliente; optimización de velocidad, checkout, catálogo e integraciones.
 - Precios: presupuesto por proyecto. No hay planes mensuales, ni permanencia, ni tarifa publicada.
 - Oferta de entrada: un diagnóstico gratuito de 20 minutos, sin compromiso, para revisar la operación de la tienda y decidir qué automatizar primero.

@@ -4,7 +4,7 @@ Build a mobile-first one-page marketing site for **papurro.com**, entirely in **
 
 ## WHAT THE BUSINESS IS
 
-Papurro is ONE person (not an agency, not a team, not a bot) who helps Shopify stores operating in Uruguay with: automation, applied AI, customer care setup, and store optimization.
+Papurro is ONE person (not an agency, not a team, not a bot) who helps e-commerce stores operating in Uruguay with: automation, applied AI, customer care setup, and store optimization.
 
 ## CRITICAL HONESTY RULES — DO NOT VIOLATE
 
@@ -60,8 +60,8 @@ Use the same mascot as the favicon.
 
 **2. Hero** (paper background)
 
-- Small rotated badge sticker: "Para tiendas Shopify en Uruguay 🇺🇾"
-- H1 huge: "Hago que tu Shopify labure solo." — with "labure solo" inside a pink highlighter box.
+- Small rotated badge sticker: "Para tiendas de e-commerce en Uruguay 🇺🇾"
+- H1 huge: "Hago que tu e-commerce labure solo." — with "labure solo" inside a pink highlighter box.
 - Sub: "Automatización, IA que sirve y atención al cliente ordenada. No soy una agencia: soy una persona, con una computadora y mucho café."
 - Big button: "diagnóstico gratis de 20 min →" → `#diagnostico`.
 - Small text under: "Respondo yo. En serio. No hay bot."
@@ -101,11 +101,11 @@ It is a real offer — keep the copy honest and do not attach conditions that ar
 **7. Final CTA** (pink section, big)
 "¿Arrancamos?"
 "Pedime el diagnóstico de 20 minutos, escribime a **info@papurro.com** o mandame un WhatsApp."
-Giant black button "info@papurro.com" → `mailto:info@papurro.com?subject=Hola%20Papurro&body=Hola!%20Tengo%20una%20tienda%20Shopify%20y...`
+Giant black button "info@papurro.com" → `mailto:info@papurro.com?subject=Hola%20Papurro&body=Hola!%20Tengo%20una%20tienda%20de%20e-commerce%20y...`
 Plus a small ghost button "Copiar el mail" that copies to clipboard and shows a rotated "¡copiado!" sticker.
 Small line: "Contesto en 24-48hs hábiles. Soy uno solo, tené paciencia 🐶"
 
-**8. Footer** (ink background, paper text) — mascot mini + "papurro · Shopify, automatización e IA para tiendas uruguayas · info@papurro.com · Hecho en Uruguay 🧉". Current year dynamic.
+**8. Footer** (ink background, paper text) — mascot mini + "papurro · e-commerce, automatización e IA para tiendas uruguayas · info@papurro.com · Hecho en Uruguay 🧉". Current year dynamic.
 
 ## TECH
 

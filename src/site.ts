@@ -8,20 +8,20 @@ export const SITE_NAME = "Papurro";
 export const EMAIL = "info@papurro.com";
 export const MAILTO = `mailto:${EMAIL}`;
 
-export const MAILTO_LONG = `mailto:${EMAIL}?subject=Hola%20Papurro&body=Hola!%20Tengo%20una%20tienda%20Shopify%20y...`;
+export const MAILTO_LONG = `mailto:${EMAIL}?subject=Hola%20Papurro&body=Hola!%20Tengo%20una%20tienda%20de%20e-commerce%20y...`;
 
 /** Mail con asunto por país, para saber de dónde llegó la consulta. */
 export function mailtoPais(pais: string) {
   return `mailto:${EMAIL}?subject=${encodeURIComponent(
     `Hola Papurro (${pais})`,
   )}&body=${encodeURIComponent(
-    `Hola! Tengo una tienda Shopify en ${pais} y necesito ayuda con...`,
+    `Hola! Tengo una tienda de e-commerce en ${pais} y necesito ayuda con...`,
   )}`;
 }
 
 /** Frase corta y citable: lo que un buscador o un LLM va a extraer. */
 export const ONE_LINER =
-  "Papurro es una persona —no una agencia— que ayuda a tiendas Shopify de Uruguay, " +
+  "Papurro es una persona —no una agencia— que ayuda a tiendas de e-commerce de Uruguay, " +
   "Argentina y Chile con automatización, IA aplicada, atención al cliente y optimización.";
 
 export const RESPONSE_TIME = "24 a 48 horas hábiles";
@@ -39,13 +39,13 @@ function waLink(texto: string) {
 }
 
 export const WHATSAPP_URL = waLink(
-  "Hola Papurro! Tengo una tienda Shopify y quiero el diagnóstico de 20 minutos.",
+  "Hola Papurro! Tengo una tienda de e-commerce y quiero el diagnóstico de 20 minutos.",
 );
 
 /** WhatsApp con el país ya escrito, para saber de dónde llegó la consulta. */
 export function whatsappPais(pais: string) {
   return waLink(
-    `Hola Papurro! Tengo una tienda Shopify en ${pais} y quiero el diagnóstico de 20 minutos.`,
+    `Hola Papurro! Tengo una tienda de e-commerce en ${pais} y quiero el diagnóstico de 20 minutos.`,
   );
 }
 
@@ -74,7 +74,7 @@ export type Consulta = {
 /** El formulario no tiene backend: arma un mailto con todo ya escrito y deja
  *  que el cliente de correo del visitante lo mande. */
 export function mailtoConsulta({ nombre, tienda, mensaje, pais }: Consulta) {
-  const quien = nombre.trim() || "una tienda Shopify";
+  const quien = nombre.trim() || "una tienda de e-commerce";
   const asunto = pais
     ? `Diagnóstico de 20 min (${pais}) — ${quien}`
     : `Diagnóstico de 20 min — ${quien}`;
@@ -138,7 +138,7 @@ export const SERVICIOS = [
   {
     id: "automatizacion",
     titulo: "automatización",
-    tituloLargo: "Automatización para tiendas Shopify",
+    tituloLargo: "Automatización para tiendas de e-commerce",
     texto:
       "Conecto tu tienda con las herramientas que ya usás para que las tareas repetitivas —cargar pedidos, actualizar stock, avisar despachos, generar reportes— pasen a hacerse solas.",
   },

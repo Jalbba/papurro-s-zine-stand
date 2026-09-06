@@ -70,8 +70,8 @@ export function Footer() {
             <Logo className="h-9 w-auto shrink-0" placeholderClassName="text-2xl" />
           </a>
           <p className="mt-3 max-w-xs text-xs leading-relaxed text-paper/70 sm:text-sm">
-            Automatización, IA aplicada, atención al cliente y optimización para tiendas Shopify de
-            Uruguay, Argentina y Chile. Una persona, no una agencia.
+            Automatización, IA aplicada, atención al cliente y optimización para tiendas de
+            e-commerce de Uruguay, Argentina y Chile. Una persona, no una agencia.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export function Footer() {
             {PAISES.map((p) => (
               <li key={p.slug}>
                 <a href={`/${p.slug}/`} className="underline underline-offset-4 hover:text-paper">
-                  Shopify en {p.nombre} {p.bandera}
+                  E-commerce en {p.nombre} {p.bandera}
                 </a>
               </li>
             ))}
