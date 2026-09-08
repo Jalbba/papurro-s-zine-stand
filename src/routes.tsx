@@ -2,6 +2,7 @@ import type { ReactElement } from "react";
 import Home from "@/pages/Home";
 import CountryPage from "@/pages/CountryPage";
 import Privacidad from "@/pages/Privacidad";
+import AccesoBloqueado from "@/pages/AccesoBloqueado";
 import NotFound from "@/pages/NotFound";
 import { CONTENIDO_PAISES } from "@/content/countries";
 import { FAQ_HOME } from "@/content/home";
@@ -53,6 +54,16 @@ privacidadHead.jsonLd = [
   ]),
 ];
 
+const accesoBloqueadoHead: HeadData = {
+  path: "/acceso-bloqueado/",
+  title: "Acceso bloqueado · Papurro",
+  description: "Esta conexión fue bloqueada por la política de seguridad de Papurro.",
+  lang: "es",
+  ogLocale: "es_UY",
+  cluster: false,
+  robots: "noindex, nofollow",
+};
+
 const notFoundHead: HeadData = {
   path: "/404.html",
   title: "Página no encontrada · Papurro",
@@ -96,6 +107,7 @@ export const ROUTES: Record<string, Route> = {
   "/": { head: homeHead, element: <Home />, sitemap: 1 },
   ...Object.fromEntries(CONTENIDO_PAISES.map((p) => [`/${p.slug}/`, paisRoute(p)])),
   "/privacidad/": { head: privacidadHead, element: <Privacidad />, sitemap: 0.3 },
+  "/acceso-bloqueado/": { head: accesoBloqueadoHead, element: <AccesoBloqueado />, sitemap: false },
 };
 
 export const NOT_FOUND: Route = {
