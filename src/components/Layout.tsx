@@ -18,7 +18,8 @@ const HEADER_TXT = {
     wa: (n: string) => `Escribir por WhatsApp al ${n}`,
     ctaLarga: "diagnóstico gratis →",
     ctaCorta: "diagnóstico →",
-    portal: "portal de cliente",
+    portalLarga: "portal de cliente",
+    portalCorta: "portal",
   },
   en: {
     inicio: "Papurro, home",
@@ -26,7 +27,8 @@ const HEADER_TXT = {
     wa: (n: string) => `Message on WhatsApp: ${n}`,
     ctaLarga: "free diagnostic →",
     ctaCorta: "diagnostic →",
-    portal: "client portal",
+    portalLarga: "client portal",
+    portalCorta: "portal",
   },
 } as const;
 
@@ -74,9 +76,10 @@ export function Header({
         <div className="flex items-center gap-2">
           <a
             href={CLIENT_PORTAL_URL}
-            className="btn-press hidden rounded-full bg-paper px-4 py-2.5 font-display text-sm shadow-soft ring-1 ring-hairline sm:inline-flex sm:items-center"
+            className="btn-press inline-flex items-center rounded-full bg-paper px-3 py-2.5 font-display text-sm shadow-soft ring-1 ring-hairline sm:px-4"
           >
-            {t.portal}
+            <span className="hidden sm:inline">{t.portalLarga}</span>
+            <span className="sm:hidden">{t.portalCorta}</span>
           </a>
 
           <a
