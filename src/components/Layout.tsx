@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { FlaskConical, User } from "lucide-react";
 import { DoodleWhats } from "@/components/Doodles";
 import { Logo } from "@/components/Logo";
 import {
@@ -17,18 +18,14 @@ const HEADER_TXT = {
     paises: "Países",
     wa: (n: string) => `Escribir por WhatsApp al ${n}`,
     ctaLarga: "diagnóstico gratis →",
-    ctaCorta: "diagnóstico →",
     portalLarga: "portal de cliente",
-    portalCorta: "portal",
   },
   en: {
     inicio: "Papurro, home",
     paises: "Countries",
     wa: (n: string) => `Message on WhatsApp: ${n}`,
     ctaLarga: "free diagnostic →",
-    ctaCorta: "diagnostic →",
     portalLarga: "client portal",
-    portalCorta: "portal",
   },
 } as const;
 
@@ -76,10 +73,12 @@ export function Header({
         <div className="flex items-center gap-2">
           <a
             href={CLIENT_PORTAL_URL}
-            className="btn-press inline-flex items-center rounded-full bg-paper px-3 py-2.5 font-display text-sm shadow-soft ring-1 ring-hairline sm:px-4"
+            aria-label={t.portalLarga}
+            title={t.portalLarga}
+            className="btn-press inline-flex items-center gap-2 rounded-full bg-paper p-2.5 font-display text-sm shadow-soft ring-1 ring-hairline sm:px-4"
           >
+            <User className="h-5 w-5 shrink-0 text-ink sm:hidden" />
             <span className="hidden sm:inline">{t.portalLarga}</span>
-            <span className="sm:hidden">{t.portalCorta}</span>
           </a>
 
           <a
@@ -93,9 +92,14 @@ export function Header({
             <DoodleWhats className="h-6 w-6 text-ink" />
           </a>
 
-          <a href={ctaHref} className="btn-press btn-rainbow px-5 py-2.5 text-base">
+          <a
+            href={ctaHref}
+            aria-label={t.ctaLarga}
+            title={t.ctaLarga}
+            className="btn-press btn-rainbow inline-flex items-center gap-2 p-2.5 text-base sm:px-5 sm:py-2.5"
+          >
+            <FlaskConical className="h-5 w-5 shrink-0 sm:hidden" />
             <span className="hidden sm:inline">{t.ctaLarga}</span>
-            <span className="sm:hidden">{t.ctaCorta}</span>
           </a>
         </div>
       </div>
