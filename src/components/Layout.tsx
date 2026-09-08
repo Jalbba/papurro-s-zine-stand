@@ -18,6 +18,7 @@ const HEADER_TXT = {
     wa: (n: string) => `Escribir por WhatsApp al ${n}`,
     ctaLarga: "diagnóstico gratis →",
     ctaCorta: "diagnóstico →",
+    portal: "portal de cliente",
   },
   en: {
     inicio: "Papurro, home",
@@ -25,8 +26,11 @@ const HEADER_TXT = {
     wa: (n: string) => `Message on WhatsApp: ${n}`,
     ctaLarga: "free diagnostic →",
     ctaCorta: "diagnostic →",
+    portal: "client portal",
   },
 } as const;
+
+const CLIENT_PORTAL_URL = "https://client.papurro.com";
 
 /** Barra superior: marca, países (desktop), WhatsApp directo y el CTA al diagnóstico. */
 export function Header({
@@ -68,6 +72,13 @@ export function Header({
         </nav>
 
         <div className="flex items-center gap-2">
+          <a
+            href={CLIENT_PORTAL_URL}
+            className="btn-press hidden rounded-full bg-paper px-4 py-2.5 font-display text-sm shadow-soft ring-1 ring-hairline sm:inline-flex sm:items-center"
+          >
+            {t.portal}
+          </a>
+
           <a
             href={wa}
             target="_blank"
