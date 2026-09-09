@@ -10,8 +10,11 @@
 import {
   DIAGNOSTICO,
   EMAIL,
+  GOOGLE_KG_MID,
   ONE_LINER,
   PAISES,
+  PERFILES,
+  PERFILES_PERSONA,
   RESPONSE_TIME,
   SITE_NAME,
   SITE_URL,
@@ -52,6 +55,21 @@ export function escapeHtml(value: string) {
 
 /* ---------------- Bloques JSON-LD reutilizables ---------------- */
 
+/** Temas del negocio. Los comparten el nodo del negocio y el de la persona:
+ *  atrás hay una sola persona, así que las dos listas no pueden divergir. */
+const KNOWS_ABOUT = [
+  "e-commerce",
+  "Automatización de e-commerce",
+  "Inteligencia artificial aplicada",
+  "Atención al cliente",
+  "Optimización de tiendas online",
+  "Integraciones de e-commerce",
+];
+
+/** `sameAs` sólo si hay perfiles cargados: un array vacío no aporta al grafo. */
+const sameAsOrg = PERFILES.length > 0 ? { sameAs: PERFILES } : {};
+const sameAsPersona = PERFILES_PERSONA.length > 0 ? { sameAs: PERFILES_PERSONA } : {};
+
 const ORG_ID = `${SITE_URL}/#papurro`;
 const PERSON_ID = `${SITE_URL}/#persona`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
@@ -59,9 +77,12 @@ const WEBSITE_ID = `${SITE_URL}/#website`;
 /** El negocio: una persona que atiende Uruguay, Argentina y Estados Unidos, en remoto. */
 export function professionalServiceLd(): Record<string, unknown> {
   return {
-    "@type": "ProfessionalService",
+    // Multi-tipo a propósito: ProfessionalService ya deriva de Organization,
+    // pero muchos parsers sólo buscan el string "Organization" literal.
+    "@type": ["ProfessionalService", "Organization"],
     "@id": ORG_ID,
     name: SITE_NAME,
+    ...sameAsOrg,
     alternateName: "Papurro · e-commerce",
     url: `${SITE_URL}/`,
     email: EMAIL,
@@ -74,6 +95,11 @@ export function professionalServiceLd(): Record<string, unknown> {
     founder: { "@id": PERSON_ID },
     numberOfEmployees: { "@type": "QuantitativeValue", value: 1 },
     address: { "@type": "PostalAddress", addressCountry: "UY" },
+    identifier: {
+      "@type": "PropertyValue",
+      propertyID: "Google Knowledge Graph ID",
+      value: GOOGLE_KG_MID,
+    },
     areaServed: PAISES.map((p) => ({ "@type": "Country", name: p.nombre, identifier: p.iso })),
     availableLanguage: [
       { "@type": "Language", name: "Castellano", alternateName: "es" },
@@ -96,14 +122,7 @@ export function professionalServiceLd(): Record<string, unknown> {
         areaServed: PAISES.map((p) => p.iso),
       },
     ],
-    knowsAbout: [
-      "e-commerce",
-      "Automatización de e-commerce",
-      "Inteligencia artificial aplicada",
-      "Atención al cliente",
-      "Optimización de tiendas online",
-      "Integraciones de e-commerce",
-    ],
+    knowsAbout: KNOWS_ABOUT,
     makesOffer: [
       {
         "@type": "Offer",
@@ -141,12 +160,15 @@ export function personLd(): Record<string, unknown> {
     "@type": "Person",
     "@id": PERSON_ID,
     name: "Papurro",
+    jobTitle: "Automatización e IA para tiendas de e-commerce",
+    knowsAbout: KNOWS_ABOUT,
     description:
       "La persona detrás de Papurro. Trabaja con pocas tiendas de e-commerce a la vez y contesta " +
       `los mails en ${RESPONSE_TIME}.`,
     email: EMAIL,
     telephone: WHATSAPP_E164,
     url: `${SITE_URL}/`,
+    ...sameAsPersona,
     worksFor: { "@id": ORG_ID },
     knowsLanguage: ["es", "en"],
   };

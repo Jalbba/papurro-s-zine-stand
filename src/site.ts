@@ -34,6 +34,29 @@ export const ONE_LINER =
 export const RESPONSE_TIME = "24 a 48 horas hábiles";
 export const RESPONSE_TIME_EN = "24 to 48 business hours";
 
+/* ---------------- Perfiles públicos ---------------- */
+
+/** ID de Papurro en el Knowledge Graph de Google, sacado de la ficha de Google
+ *  Business. Es el identificador con el que Google ya tiene resuelta la entidad:
+ *  va en `identifier`, que es la propiedad que corresponde a un ID, no a un
+ *  perfil. Vale más que cualquier link: no depende de que nadie lo interprete. */
+export const GOOGLE_KG_MID = "/g/11zyn4vz12";
+
+/** Perfiles que prueban que el negocio existe fuera de este dominio. Alimentan
+ *  el `sameAs` del JSON-LD, que es lo que usan buscadores y asistentes de IA
+ *  para resolver "Papurro" como una entidad concreta y no una palabra suelta.
+ *  Sólo URLs de perfiles reales y propios: una de más ensucia el grafo. */
+export const PERFILES: string[] = [
+  // Ficha de Google Business. La URL corta de "compartir" lleva parámetros de
+  // tracking y puede caducar; esta es la forma limpia, armada con el MID.
+  `https://www.google.com/search?kgmid=${GOOGLE_KG_MID}`,
+];
+
+/** Perfiles de la persona, no del negocio: LinkedIn, GitHub, lo que sea suyo.
+ *  La ficha de Google Business va en PERFILES y no acá — son dos entidades
+ *  distintas del grafo y mezclarlas le dice al crawler algo que no es cierto. */
+export const PERFILES_PERSONA: string[] = [];
+
 /* ---------------- WhatsApp ---------------- */
 
 /** Número real, en tres formatos: para mostrar, para wa.me (sólo dígitos)

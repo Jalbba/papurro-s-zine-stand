@@ -43,7 +43,7 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
     idioma: "es",
     title: "Automatización e-commerce en Uruguay · Papurro",
     description:
-      "Ayudo a tiendas de e-commerce uruguayas con automatización, IA aplicada, atención al cliente y optimización. Una persona, no una agencia. Escribime a info@papurro.com.",
+      "Ayudo a tiendas de e-commerce uruguayas con automatización, IA aplicada, atención al cliente y optimización. Una persona, no una agencia. Escribime.",
     h1: "automatización de e-commerce en",
     h1Marker: "Uruguay",
     resumen:
@@ -113,7 +113,7 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
     idioma: "es",
     title: "Automatización e-commerce en Argentina · Papurro",
     description:
-      "Automatización, IA aplicada, atención al cliente y optimización para tiendas de e-commerce en Argentina. Una persona, presupuesto por proyecto. info@papurro.com.",
+      "Automatización, IA aplicada, atención al cliente y optimización para tiendas de e-commerce en Argentina. Una persona, presupuesto por proyecto.",
     h1: "automatización de e-commerce en",
     h1Marker: "Argentina",
     resumen:

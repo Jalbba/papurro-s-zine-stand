@@ -18,9 +18,9 @@ export type Route = {
 
 const homeHead: HeadData = {
   path: "/",
-  title: "Automatización e-commerce en Uruguay, Argentina y Estados Unidos · Papurro",
+  title: "Automatización e-commerce en Uruguay, Argentina y EE.UU. · Papurro",
   description:
-    "Una persona (no una agencia) que automatiza tiendas de e-commerce en Uruguay, Argentina y Estados Unidos: IA aplicada, atención al cliente y optimización. info@papurro.com",
+    "Una persona (no una agencia) que automatiza tiendas de e-commerce en Uruguay, Argentina y EE.UU.: IA aplicada, atención al cliente y optimización.",
   lang: "es",
   ogLocale: "es_UY",
 };
@@ -39,9 +39,9 @@ homeHead.jsonLd = [
 
 const privacidadHead: HeadData = {
   path: "/privacidad/",
-  title: "Privacidad · Papurro",
+  title: "Política de privacidad y datos · Papurro",
   description:
-    "Qué datos toca este sitio (casi ninguno) y qué pasa con tu mail si escribís a info@papurro.com.",
+    "Qué datos toca este sitio (casi ninguno), qué pasa con tu mail si escribís a info@papurro.com y cómo pedir que los borre. Sin cookies de terceros.",
   lang: "es",
   ogLocale: "es_UY",
   cluster: false,
