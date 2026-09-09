@@ -49,7 +49,7 @@ async function fuentesEmbebidas() {
   return caras.join("\n");
 }
 
-const marca = (await readFile(path.join(root, "public/papurro-p.png"))).toString("base64");
+const marca = (await readFile(path.join(root, "assets-src/papurro-p.png"))).toString("base64");
 const rainbow = "linear-gradient(90deg,#01c8d1,#9eca2f,#ffd008,#ff930e,#fe3d7c,#9953d9)";
 
 const html = `<!doctype html><meta charset="utf-8"><style>

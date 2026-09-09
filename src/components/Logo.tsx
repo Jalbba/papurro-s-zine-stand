@@ -1,9 +1,10 @@
-/** Transparent 3D "P" brand mark. */
+/** Transparent 3D "P" brand mark. WebP para todos, PNG de respaldo. */
 export const LOGO_SRC = "/papurro-p.png";
+export const LOGO_SRC_WEBP = "/papurro-p.webp";
 
 /** Tamaño real del archivo: se declara para evitar saltos de layout (CLS). */
-const LOGO_W = 1152;
-const LOGO_H = 928;
+const LOGO_W = 768;
+const LOGO_H = 619;
 
 type LogoProps = {
   className?: string;
@@ -27,16 +28,21 @@ type PMarkProps = {
 /** Just the P mark. */
 export function PMark({ className, alt = "Papurro", priority = false }: PMarkProps) {
   return (
-    <img
-      src={LOGO_SRC}
-      alt={alt}
-      width={LOGO_W}
-      height={LOGO_H}
-      className={className}
-      decoding="async"
-      loading={priority ? "eager" : "lazy"}
-      fetchPriority={priority ? "high" : undefined}
-    />
+    // `contents` evita que <picture> genere una caja propia: el <img> queda
+    // directo en el flex del padre, igual que antes de agregar el WebP.
+    <picture className="contents">
+      <source srcSet={LOGO_SRC_WEBP} type="image/webp" />
+      <img
+        src={LOGO_SRC}
+        alt={alt}
+        width={LOGO_W}
+        height={LOGO_H}
+        className={className}
+        decoding="async"
+        loading={priority ? "eager" : "lazy"}
+        fetchPriority={priority ? "high" : undefined}
+      />
+    </picture>
   );
 }
 
