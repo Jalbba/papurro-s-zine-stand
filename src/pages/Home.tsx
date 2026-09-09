@@ -98,9 +98,13 @@ export default function Home() {
               hagamos que tu e-commerce <span className="marker">labure solo</span>.
             </h1>
 
+            {/* Primer párrafo después del H1: es el que levanta un crawler que no
+                baja hasta el resumen. Arranca con sujeto —"soy Papurro"— para que
+                se pueda citar suelto, sin repetir el ONE_LINER de más abajo. */}
             <p className="mt-5 max-w-md text-base font-semibold sm:text-lg">
-              Automatización, IA aplicada y atención al cliente para tiendas de e-commerce de
-              Uruguay, Argentina y Estados Unidos. No soy una agencia. Soy Papurro.
+              Soy Papurro: una sola persona que automatiza tiendas de e-commerce de Uruguay,
+              Argentina y Estados Unidos. No soy una agencia. Saco del medio las tareas repetitivas
+              y te devuelvo las horas.
             </p>
 
             <a href="#diagnostico" className="btn-press btn-ink mt-7 px-6 py-4 text-lg sm:text-xl">

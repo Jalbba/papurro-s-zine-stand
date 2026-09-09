@@ -23,8 +23,10 @@ const ICONOS = {
 const TXT = {
   es: {
     pill: (nombre: string, bandera: string) => `Tiendas de e-commerce en ${nombre} ${bandera}`,
+    // Arranca con sujeto para que se pueda citar suelto. No repite el `resumen`
+    // de la sección de abajo: son dos frases distintas, no la misma dos veces.
     subtitulo: (nombre: string) =>
-      `Automatización, IA aplicada, atención al cliente y optimización para tiendas de e-commerce en ${nombre}. Una persona, no una agencia.`,
+      `Soy Papurro: una sola persona que automatiza tiendas de e-commerce en ${nombre}. No soy una agencia. Saco las tareas repetitivas del medio y te devuelvo las horas.`,
     ctaHero: (min: number) => `diagnóstico gratis de ${min} min →`,
     sinCompromiso: "Sin compromiso. Contesto yo, no un bot.",
     altMascota: (nombre: string) => `Papurro, automatización de e-commerce para ${nombre}`,
@@ -55,7 +57,7 @@ const TXT = {
   en: {
     pill: (nombre: string, bandera: string) => `E-commerce stores in ${nombre} ${bandera}`,
     subtitulo: (nombre: string) =>
-      `Automation, applied AI, customer support and optimization for e-commerce stores in ${nombre}. One person, not an agency.`,
+      `I'm Papurro: one person automating e-commerce stores in ${nombre}. Not an agency. I take the repetitive work off your plate and give you the hours back.`,
     ctaHero: (min: number) => `free ${min}-min diagnostic →`,
     sinCompromiso: "No strings attached. I reply myself, not a bot.",
     altMascota: (nombre: string) => `Papurro, e-commerce automation for ${nombre}`,
