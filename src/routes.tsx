@@ -41,7 +41,7 @@ const privacidadHead: HeadData = {
   path: "/privacidad/",
   title: "Política de privacidad y datos · Papurro",
   description:
-    "Qué datos toca este sitio (casi ninguno), qué pasa con tu mail si escribís a info@papurro.com y cómo pedir que los borre. Sin cookies de terceros.",
+    "Qué datos toca este sitio (casi ninguno), qué cookies usa la etiqueta de Google Ads, qué pasa con tu mail si escribís a info@papurro.com y cómo pedir que los borre.",
   lang: "es",
   ogLocale: "es_UY",
   cluster: false,

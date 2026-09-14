@@ -2,7 +2,8 @@ import { Page } from "@/components/Layout";
 import { Breadcrumbs } from "@/components/sections";
 import { EMAIL, MAILTO, WHATSAPP_DISPLAY, WHATSAPP_URL } from "@/site";
 
-/** Página simple y honesta: qué datos toca este sitio (spoiler: casi ninguno).
+/** Página simple y honesta: qué datos toca este sitio (spoiler: casi ninguno,
+ *  salvo la etiqueta de Google Ads, que acá se declara en criollo).
  *  Sirve para transparencia y para las políticas de las plataformas de ads. */
 export default function Privacidad() {
   return (
@@ -44,8 +45,9 @@ export default function Privacidad() {
           <div>
             <h2 className="text-2xl">qué datos toma este sitio</h2>
             <p className="mt-2">
-              Este sitio es una página estática: no pide registro, no usa cookies y no guarda datos
-              tuyos en ningún lado. Tampoco hay servidor atrás.
+              Este sitio es una página estática: no pide registro, no tiene servidor atrás y no
+              guarda datos tuyos en ningún lado. Lo único que mira quién entra es la etiqueta de
+              Google Ads que te cuento abajo, en servicios de terceros.
             </p>
             <p className="mt-2">
               El formulario de contacto no envía nada por su cuenta: con lo que escribís arma un
@@ -83,8 +85,34 @@ export default function Privacidad() {
             <p className="mt-2">
               El sitio carga tipografías desde Google Fonts y está alojado en GitHub Pages; como en
               cualquier sitio web, esos proveedores pueden registrar la solicitud técnica (por
-              ejemplo tu dirección IP) para poder servir la página. No hay cookies de seguimiento ni
-              perfiles publicitarios armados desde este sitio.
+              ejemplo tu dirección IP) para poder servir la página.
+            </p>
+            <p className="mt-2">
+              También cargo la etiqueta de Google Ads (gtag.js), y está para una sola cosa: saber
+              qué avisos traen visitas y cuáles no. Para eso Google puede guardar cookies en tu
+              navegador y usar esos datos para medir y personalizar publicidad, según{" "}
+              <a
+                href="https://policies.google.com/technologies/ads"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4"
+              >
+                su propia política
+              </a>
+              . Lo que yo veo son números agregados —cuántas visitas, desde qué aviso—, nunca tu
+              nombre ni tu correo.
+            </p>
+            <p className="mt-2">
+              Si no querés nada de esto, cualquier bloqueador de publicidad lo frena, y en{" "}
+              <a
+                href="https://myadcenter.google.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4"
+              >
+                My Ad Center
+              </a>{" "}
+              podés ajustar qué hace Google con tus datos. El sitio funciona igual.
             </p>
           </div>
         </div>
