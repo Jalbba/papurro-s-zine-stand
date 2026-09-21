@@ -65,7 +65,7 @@ for (const [ruta, route] of Object.entries(ROUTES)) {
   generadas.push({ ruta, sitemap: route.sitemap });
 }
 
-// GitHub Pages sirve 404.html ante cualquier ruta desconocida.
+// Cloudflare Pages sirve 404.html ante cualquier ruta desconocida.
 await escribir(path.join(dist, "404.html"), componer(NOT_FOUND.head, render("/404")));
 
 /* ---------------- sitemap.xml ---------------- */
