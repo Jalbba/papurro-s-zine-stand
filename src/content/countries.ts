@@ -81,7 +81,7 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
     faqs: [
       {
         q: "¿Qué es el diagnóstico de 20 minutos?",
-        a: "Una llamada corta, gratis y sin compromiso. Me contás cómo funciona hoy tu tienda en Uruguay, miro dónde se te va el tiempo y te digo qué automatizaría primero. Si de ahí sale un proyecto se cotiza, y si no, te quedás igual con la lista de qué conviene arreglar. Lo pedís por el formulario de esta página o por WhatsApp al +598 92 061 005.",
+        a: "Una llamada corta, gratis y sin compromiso. Me contás cómo funciona hoy tu tienda en Uruguay, miro dónde se te va el tiempo y te digo qué automatizaría primero. Si de ahí sale un proyecto se cotiza, y si no, te quedás igual con la lista de qué conviene arreglar. Lo pedís por el formulario de esta página o por WhatsApp al +598 95 086 056.",
       },
       {
         q: "¿Trabajás con tiendas de e-commerce uruguayas?",
@@ -156,7 +156,7 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
     faqs: [
       {
         q: "¿Qué es el diagnóstico de 20 minutos?",
-        a: "Una llamada corta, gratis y sin compromiso. Me contás cómo funciona hoy tu tienda en Argentina, miro dónde se te va el tiempo y te digo qué automatizaría primero. Si de ahí sale un proyecto se cotiza, y si no, te quedás igual con la lista de qué conviene arreglar. Lo pedís por el formulario de esta página o por WhatsApp al +598 92 061 005.",
+        a: "Una llamada corta, gratis y sin compromiso. Me contás cómo funciona hoy tu tienda en Argentina, miro dónde se te va el tiempo y te digo qué automatizaría primero. Si de ahí sale un proyecto se cotiza, y si no, te quedás igual con la lista de qué conviene arreglar. Lo pedís por el formulario de esta página o por WhatsApp al +598 95 086 056.",
       },
       {
         q: "¿Trabajás con tiendas de e-commerce de Argentina?",
@@ -231,7 +231,7 @@ export const CONTENIDO_PAISES: PaisContenido[] = [
     faqs: [
       {
         q: "What is the 20-minute diagnostic?",
-        a: "A short, free, no-strings-attached call. You tell me how your US store runs today, I look at where your time is going, and I tell you what I'd automate first. If a project comes out of it, it gets quoted; if not, you keep the list of what's worth fixing. Book it through the form on this page or on WhatsApp at +598 92 061 005.",
+        a: "A short, free, no-strings-attached call. You tell me how your US store runs today, I look at where your time is going, and I tell you what I'd automate first. If a project comes out of it, it gets quoted; if not, you keep the list of what's worth fixing. Book it through the form on this page or on WhatsApp at +598 95 086 056.",
       },
       {
         q: "Do you work with e-commerce stores in the United States?",

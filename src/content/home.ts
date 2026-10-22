@@ -29,7 +29,7 @@ export const FAQ_HOME: Faq[] = [
   },
   {
     q: "¿Cómo te contacto?",
-    a: "De tres formas: el formulario de la página, el mail info@papurro.com o WhatsApp al +598 92 061 005. Contame qué te está haciendo perder tiempo y arrancamos por ahí.",
+    a: "De tres formas: el formulario de la página, el mail info@papurro.com o WhatsApp al +598 95 086 056. Contame qué te está haciendo perder tiempo y arrancamos por ahí.",
   },
   {
     q: "¿Qué es el diagnóstico de 20 minutos?",

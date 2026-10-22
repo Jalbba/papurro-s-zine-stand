@@ -9,7 +9,7 @@ Papurro is ONE person (not an agency, not a team, not a bot) who helps e-commerc
 - NEVER invent testimonials, client names, client logos, star ratings, "trusted by" bars, case studies, or made-up metrics ("+300% ventas", "50 clientes felices"). Zero fake social proof. If a section would need proof we don't have, cut the section.
 - NEVER imply it's a team, agency, or AI-powered bot service. The site must explicitly say it's one real human being.
 - No "24/7 support", no fake phone numbers, no fake address, no fake years of experience.
-- Real contact channels, and only these: the email **info@papurro.com** and WhatsApp at **+598 92 061 005**. No fake phone numbers, no fake address.
+- Real contact channels, and only these: the email **info@papurro.com** and WhatsApp at **+598 95 086 056**. No fake phone numbers, no fake address.
 
 ## VISUAL DIRECTION — THIS IS THE MOST IMPORTANT PART
 

@@ -61,9 +61,9 @@ export const PERFILES_PERSONA: string[] = [];
 
 /** Número real, en tres formatos: para mostrar, para wa.me (sólo dígitos)
  *  y en E.164 para el JSON-LD. */
-export const WHATSAPP_DISPLAY = "+598 92 061 005";
-export const WHATSAPP_DIGITS = "59892061005";
-export const WHATSAPP_E164 = "+59892061005";
+export const WHATSAPP_DISPLAY = "+598 95 086 056";
+export const WHATSAPP_DIGITS = "59895086056";
+export const WHATSAPP_E164 = "+59895086056";
 
 function waLink(texto: string) {
   return `https://wa.me/${WHATSAPP_DIGITS}?text=${encodeURIComponent(texto)}`;
